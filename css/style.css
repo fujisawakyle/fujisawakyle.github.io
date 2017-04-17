@@ -1,0 +1,68 @@
+#backdrop {
+    background-color:black;
+}
+
+#wrapper {
+    width:960px;
+    height: 640px;
+    position:relative;
+    margin:0 auto;
+}
+
+#homeSection h1 {
+    position:absolute;
+    padding:0;
+    top:27%;
+    left:0%;
+    width:100%;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 5.5em;
+    /*color: #00ceff;*/
+    color: rgb(0, 235, 255);
+    letter-spacing:1px;
+    text-align: center;
+}
+
+#homeSection h2 {
+    position:absolute;
+    padding:0;
+    top:42%;
+    left:0;
+    width:100%;
+    font-family: 'Six Caps', sans-serif;
+    font-size: 2.3em;
+    color: white;
+    letter-spacing:0.5px;
+    text-align: center;
+}
+
+#homeSection h3 {
+    width:100%;
+    left:0;
+    color:white;
+    position: absolute;
+    font-size: 2.5em;
+    top: 11%;
+    text-align: center;
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
+#contactBlock {
+    position:absolute;
+    width: 100%;
+    text-align: center;
+    top:52%;
+}
+
+#contactBlock i {
+    color:#ffffff;
+    padding:3px 5px 5px 5px;
+    font-size: 1.7em;
+    height:30px;
+    width:30px;
+}
+
+#contactBlock i:hover {
+    color: rgb(0, 235, 255);
+}
+
