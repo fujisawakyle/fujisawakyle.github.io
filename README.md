@@ -1,0 +1,1 @@
+# fujisawakyle.github.io
