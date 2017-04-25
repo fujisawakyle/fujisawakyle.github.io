@@ -1,0 +1,146 @@
+body {
+	background-color:white;
+}
+
+.menuButton {
+		display:none;
+	}
+
+@media screen and (max-width:425px) {
+	.menuButton {
+		font-size:2em;
+		margin:0;
+		display:inline-block;
+		padding:1em;
+		margin-top:0;
+		color:black;
+		line-height:1.5em;
+		width:25%;
+	}
+	#menuClose {
+		margin-left:4.5em;
+		/* prevents margin collapse */
+		display:inline-block; 
+		margin-top:1em;
+		padding: 0.6em
+	}
+	#homeSection .logo{
+		width:6em;
+		border:1px solid black;
+	}
+	nav {
+  	margin: 0;
+		position:absolute;
+		height:100%;
+		background-color: white;
+		z-index:1; transform:translate(-145px,0);
+		transition:transform 0.3s ease;
+		font-family: 'Glegoo', serif;
+		font-size: 20px;
+		color:black;
+		box-shadow: 1px 1px 5px #7d808d;
+	}
+	main {
+		transform:translate(0,0);
+		transition:transform 0.3s ease;
+	}
+	nav.open {
+		transform:translate(0,0);
+	}
+	main.open {
+		transform:translate(145px,0);
+		transition:transform 0.3s ease;
+	}
+	nav li{
+		list-style-type: none;
+		padding-right: 1em;
+		padding-top:.5em;
+		margin:0;
+		text-align:right;
+		display:block;
+	}
+	
+	#homeSection h1 {
+		font-size:2.45.em;
+		text-align: center;
+		display:inline-block;
+		line-height: 1.5em;
+		width:73%;
+	}
+	#homeSection h2 {
+		font-size:0.6em;
+		text-align: center;
+		
+	}
+}
+
+/*
+#homeSection h1 {
+  position:absolute;
+  width:48%;
+  top:0;
+  left:auto;
+  font-family: 'Six Caps', sans-serif;
+  font-size: 60px;
+  color: black;
+  letter-spacing:1px;
+  font-family: 'Glegoo', serif;
+}
+#homeSection h2 {
+  font-size:31px;
+  width:99%;
+}
+
+#sectionTitle h3{
+    position:absolute;
+    top:0%;
+    left:5%;
+    color:white;
+    font-size: 35px;
+}*/
+#aboutSection {
+    background: linear-gradient(-70deg, #66A2D9 ,#C9E0F5);
+    /*position:relative;
+    height:330px;*/
+}
+#aboutSection img {
+    /*position:absolute;*/
+    top:20%;
+    left:65%;
+    border-radius:50%
+}
+#aboutSection p {
+
+}
+
+#projectsSection {
+    background: linear-gradient(-70deg, #A8F0B2, #E2F9E5);
+    position:relative;
+    /*height:400px;*/
+}
+#projectsSection .calcPic {
+}
+
+#contactSection {
+  margin: 0;
+  padding: 0;
+}
+
+#footerSection{
+  background: linear-gradient(-70deg, #B5B8B5, #F2F5F2);
+  color:#000000;
+  /*height:100px;
+  padding-top: 40px;
+  position: relative;*/
+  /*background-image:url("https://t4.ftcdn.net/jpg/00/16/53/91/240_F_16539161_uDhRDSarSJ7mffDK4XwEdKRfyez4elCP.jpg");
+  height:100px;
+  border: 3px solid black;*/
+
+}
+#footerSection button {
+    text-align: center;
+}
+.about-me {
+  margin-left:90px;
+  font-family: 'Marcellus';
+}
