@@ -7,6 +7,8 @@ body {
 		height:100%;
 		background:white;
 		position:fixed;
+		margin:0;
+		top:0;
 		box-shadow: 1px 1px 5px #7d808d;
 		z-index: 2;
 		border-collapse:collapse;
@@ -16,7 +18,7 @@ body {
 		width:100%;
 	}
 	main {
-		transform:translate(20%,0);
+		transform:translate(80px,0);
 	}
 	#contactTable {
 		display: table-row;
@@ -41,10 +43,10 @@ body {
 	}
 	#drawer {
   	margin: 0;
-		position:absolute;
+		position:fixed;
 		background-color: white;
-		transform:translate(-48%,0);
-		transition:transform 0.3s ease;
+		transform:translateX(-48%);		
+		transition:transform 0.4s ease;
 		font-family: 'Glegoo', serif;
 		font-size: 20px;
 		color:black;
@@ -72,16 +74,7 @@ body {
 	}
 	
 	
-@media screen and (max-width:425px) {
-	
-	
-	#menuClose {
-		margin-left:4.5em;
-		/* prevents margin collapse */
-		display:inline-block; 
-		margin-top:1em;
-		padding: 0.6em
-	}
+@media screen and (max-width:650px) {
 	
 	#homeSection img {
 		width:80%;
@@ -101,33 +94,7 @@ body {
 		width:80%;
 		margin:0;
 	}
-}
-
-/*
-#homeSection h1 {
-  position:absolute;
-  width:48%;
-  top:0;
-  left:auto;
-  font-family: 'Six Caps', sans-serif;
-  font-size: 60px;
-  color: black;
-  letter-spacing:1px;
-  font-family: 'Glegoo', serif;
-}
-#homeSection h2 {
-  font-size:31px;
-  width:99%;
-}
-
-#sectionTitle h3{
-    position:absolute;
-    top:0%;
-    left:5%;
-    color:white;
-    font-size: 35px;
-}*/
-#projectsSection {
+	#projectsSection {
     /*background: linear-gradient(-70deg, #A8F0B2, #E2F9E5);*/
 	text-align: center;
 	width:80%;
@@ -140,41 +107,154 @@ body {
 }
 #aboutSection {
   /*  
-		background: linear-gradient(-70deg, #66A2D9 ,#C9E0F5);
-    position:relative;
-    height:330px;*/
+		background: linear-gradient(-70deg, #66A2D9 ,#C9E0F5);*/
 	position:relative;
 	width:80%;
 	text-align: center;
+	
 }
 #aboutSection img {
-  width: 90%;
+  width: 80%;
+	padding:0;
+	margin:0;
 	border-radius:50%;
 }
 #aboutSection p {
-	width: 100%;
-	padding:5% 15% 5% 15%;
+	width:80%;
+	margin-top:0;
+	padding:5% 3% 5% 3%;
+	display: inline-block;
+	vertical-align: middle;
 }
-#contactSection {
-  margin: 0;
-  padding: 0;
-}
-
 #footerSection{
   width:80%;
 	text-align:center;
-  /*height:100px;
-  padding-top: 40px;
-  position: relative;*/
-  /*background-image:url("https://t4.ftcdn.net/jpg/00/16/53/91/240_F_16539161_uDhRDSarSJ7mffDK4XwEdKRfyez4elCP.jpg");
-  height:100px;
-  border: 3px solid black;*/
 
 }
 #footerSection p {
 	width:100%;
 }
-.about-me {
-  margin-left:90px;
-  font-family: 'Marcellus';
+}
+
+@media screen and (min-width:651px) and (max-width:959px) {
+	#homeSection{
+		width:calc(100% - 80px);
+		text-align: center;
+	}
+	#homeSection h1{
+		text-align: center;
+	}
+		#projectsSection {
+    /*background: linear-gradient(-70deg, #A8F0B2, #E2F9E5);*/
+	text-align: center;
+	width:calc(100% - 80px);
+	margin:0;
+}
+#projectsSection img{
+	width:230px;
+	display:inline-block;
+	flex-wrap:wrap;
+	margin:0.5%;
+	border-radius:2%
+}
+	#aboutSection {
+  /*  
+		background: linear-gradient(-70deg, #66A2D9 ,#C9E0F5);*/
+	position:relative;
+width:calc(100% - 80px);
+	text-align: center;
+	
+}
+#aboutSection img {
+  width: 50%;
+	padding:0;
+	margin:0;
+	border-radius:50%;
+	display: inline-block;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+#aboutSection p {
+	width:45%;
+	margin-top:0;
+	padding:5% 3% 5% 3%;
+	display: inline-block;
+	line-height: 1.5em;
+	vertical-align: middle;
+}
+#footerSection{
+width:calc(100% - 80px);
+	text-align:center;
+	margin:3%;
+
+}
+#footerSection p {
+	width:100%;
+}	
+
+}
+@media screen and (min-width:960px) {
+	main {
+		width: 960px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	
+	#homeSection{
+		width:calc(100% - 80px);
+		text-align: center;
+	}
+	#homeSection h1{
+		text-align: center;
+	}
+		#projectsSection {
+    /*background: linear-gradient(-70deg, #A8F0B2, #E2F9E5);*/
+	text-align: center;
+	width:calc(100% - 80px);
+	margin:0;
+}
+#projectsSection img{
+	width:230px;
+	display:inline-block;
+	flex-wrap:wrap;
+	margin:0.5%;
+	border-radius:2%
+}
+	#aboutSection {
+  /*  
+		background: linear-gradient(-70deg, #66A2D9 ,#C9E0F5);*/
+	position:relative;
+width:calc(100% - 80px);
+	text-align: center;
+	
+}
+#aboutSection img {
+  width: 50%;
+	padding:0;
+	margin:0;
+	border-radius:50%;
+	display: inline-block;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+#aboutSection p {
+	width:45%;
+	margin-top:0;
+	padding:5% 3% 5% 3%;
+	display: inline-block;
+	line-height: 1.5em;
+	vertical-align: middle;
+}
+#footerSection{
+width:calc(100% - 80px);
+	text-align:center;
+	margin:3%;
+
+}
+#footerSection p {
+	width:100%;
+}	
+
 }
