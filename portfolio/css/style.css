@@ -15,7 +15,23 @@ body {
     display: table;
 	}
 	.leftBar .logo {
+		margin-top: 10%;
 		width:100%;
+		transition-property: padding;
+  	transition-duration: .1s;
+  	transition-timing-function: linear;
+
+	}
+	.leftBar .logo:hover {
+		padding:6%;
+	}
+.menuButton i{
+		
+}
+	.menuButton i:hover {
+		color:aqua;
+		font-size:0.9em;
+		vertical-align: middle;
 	}
 	main {
 		transform:translate(80px,0);
@@ -28,18 +44,34 @@ body {
 	}
 	#contactTable a{
 		background:white;
-		font-size:4em;
-		margin:0;
+		font-size:3em;
+		float:;
+		margin-bottom:3em;
+		padding:10%;
 	}
+	
+	#contactTable img:hover{
+		width:45px;
+	}
+	#contactTable img {
+		width:50px;
+		
+		transition-property: width;
+  	transition-duration: .1s;
+  	transition-timing-function: linear;
+}
 	.menuButton {
-		font-size:2.5em;
+		font-size:2.9em;
 		text-align: center;
 		margin:0;
 		display:inline-block;
 		margin-top:0;
 		color:black;
-		padding:0.3em;
+		padding:0.2em;
 		width:100%;
+		transition-property: font-size;
+  	transition-duration: .1s;
+  	transition-timing-function: linear;
 	}
 	#drawer {
   	margin: 0;
