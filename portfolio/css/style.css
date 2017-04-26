@@ -7,15 +7,39 @@ body {
 	}
 
 @media screen and (max-width:425px) {
+	.leftBar {
+		width:20%;
+		height:100%;
+		background:white;
+		position:fixed;
+		box-shadow: 1px 1px 5px #7d808d;
+		z-index: 1;
+		border-collapse:collapse;
+    display : table;
+	}
+	.leftBar .logo {
+		width:100%;
+	}
+	#contactTable {
+		display : table-row;
+    vertical-align : bottom;
+    height : 1px;
+		text-align: center;
+	}
+	#contactTable a{
+		background:white;
+		font-size:4em;
+		margin:0;
+	}
 	.menuButton {
-		font-size:2em;
+		font-size:2.5em;
+		text-align: center;
 		margin:0;
 		display:inline-block;
-		padding:1em;
 		margin-top:0;
 		color:black;
-		line-height:1.5em;
-		width:25%;
+		padding:0.3em;
+		width:100%;
 	}
 	#menuClose {
 		margin-left:4.5em;
@@ -33,23 +57,18 @@ body {
 		position:absolute;
 		height:100%;
 		background-color: white;
-		z-index:1; transform:translate(-145px,0);
+		transform:translate(-40%,0);
 		transition:transform 0.3s ease;
 		font-family: 'Glegoo', serif;
 		font-size: 20px;
 		color:black;
-		box-shadow: 1px 1px 5px #7d808d;
 	}
 	main {
-		transform:translate(0,0);
-		transition:transform 0.3s ease;
+		transform:translate(20%,0);
+		
 	}
 	nav.open {
 		transform:translate(0,0);
-	}
-	main.open {
-		transform:translate(145px,0);
-		transition:transform 0.3s ease;
 	}
 	nav li{
 		list-style-type: none;
@@ -136,9 +155,6 @@ body {
   height:100px;
   border: 3px solid black;*/
 
-}
-#footerSection button {
-    text-align: center;
 }
 .about-me {
   margin-left:90px;
