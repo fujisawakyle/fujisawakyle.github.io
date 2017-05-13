@@ -1,3 +1,5 @@
+@media screen and (min-width:451px) and (orientation: portrait) {
+
 html,body{
 	height:100%;
 }
@@ -163,9 +165,7 @@ body {
     left:27px;
     background: rgba(90, 78, 78, 0.91);
     height:30px;
-		height:100%;
     width:250px;
-		width:100%;
     border-radius:1%;
     padding:0px 20px 0px 20px;
 }
@@ -517,7 +517,7 @@ h1{
     
 }
 #calcButton h3 {
-    font-size: 0.9em;
+    font-size: 1em;
     text-align: center;
     padding: 3px;
     position: absolute;
@@ -526,12 +526,12 @@ h1{
 }
 
 
+}
 
 
 
 
-
-@media (max-width: 450px) and (min-height: 420px) {
+@media screen and (max-width: 450px) and (orientation: portrait) {
 	
 	html,body{
 	height:100%;
@@ -565,8 +565,10 @@ body {
     position:absolute;
     height:550px;
 		height: 76%;
+		height: 505px;
     width: 330px;
 		width:77%;
+		width: 280px;
     border: 8px solid rgb(60, 114, 168);
     border-radius: 15px 15px 360px 360px;
     background:none;
@@ -584,8 +586,10 @@ body {
     position:absolute;
     height:535px;
 		height:74.25%;
-    width: 319px;
+		height:490px;
+    width: 310px;
 		width:75%;
+		width:270px;
     border-radius: 15px 15px 360px 360px;
     background:#000;
     left:33.90%;
@@ -601,8 +605,10 @@ body {
     position:absolute;
     height: 540px;
 		height:75%;
+		height:495px;
     width: 300px;
 		width:70%;
+		width:260px;
     border-radius:15px;
     left:35%;
     top:72%;
@@ -620,7 +626,7 @@ body {
 		height:1.5%;
     width:20px;
 		width:4.5%;
-    top:-541px;
+    top:-495px;
 		left:0;
 		right:40px;
 		bottom:0;
@@ -634,11 +640,11 @@ body {
 		height:1.5%;
     width:20px;
 		width:4.5%;
-    top:-541px;
-	left:40px;
-	right:0;
-	bottom:0;
-	margin: auto auto;
+    top:-495px;
+		left:40px;
+		right:0;
+		bottom:0;
+		margin: auto auto;
     background: rgb(60, 114, 168);
     border: 1px solid #000;
 }
@@ -653,9 +659,11 @@ body {
 #calculator {
     width: 300px;
 		width:70%;
+		width:260px;
     background: #547C8F;
     height:540px;
 		height:75%;
+		height:499px;
     position:absolute;
     top: 17%;
 		top: 12%;
@@ -692,12 +700,11 @@ body {
     left:8.5%;
     font-family: 'Orbitron', sans-serif;
     font-family: 'digital-7_monomono';
-    font-size: 28px;
+    font-size: 24px;
     padding-right: 10px;
-    
 }
 #screen p {
-    margin-top:2%;
+    margin-top:0%;
 }
 #screenBorder {
     width: 265px;
@@ -713,13 +720,11 @@ body {
 }
 #solarDesignBack {
     position:absolute;
-    top:14px;
+    top:13px;
     left:26px;
     background: rgba(90, 78, 78, 0.91);
-    height:30px;
-		height:5.5%;
-    width:250px;
-		width:84%;
+    height:28px;
+    width:213px;
     border-radius:1%;
     padding:0px 20px 0px 20px;
 }
@@ -738,11 +743,11 @@ body {
 #solarDesign li{
     display:inline-block;
     list-style: none;
-    height:30px;
+    height:28px;
     width:60px;
 		width:23%;
     position: relative;
-    margin-top:5.5%;
+    margin-top:6%;
     left: -5.7%;
     margin-left:0.05px;
     margin-right:0.05px;
@@ -773,9 +778,7 @@ h1{
 #calcButton {
     display:inline-block;
     width: 50px;
-		width:16.5%;
     height: 50px;
-		height:9%;
     background: #000;
     border-radius: 12%;
     position:absolute;
@@ -1082,7 +1085,7 @@ h1{
     text-align: center;
     padding: 3px;
     position: absolute;
-    top:-60%;
+    top:-70%;
     left:30%;
 }
 
@@ -1090,8 +1093,8 @@ h1{
 
 
 
-/*
-@media (min-width: 300px) and (orientation: landscape) {
+
+@media screen and (orientation: landscape) {
 	html,body{
 	height:100%;
 }
@@ -1112,7 +1115,6 @@ body {
 }
 #container {
   width: 100%;
-  
   background: #c1b078;
 	background: #a27979;
   height: 800px;
@@ -1120,67 +1122,7 @@ body {
   margin: 0 auto;
   position:relative;
 }
-#cover {
-    position:absolute;
-    height:300px;
-    width: 520px;
-    border: 8px solid rgb(60, 114, 168);
-    border-radius: 15px 15px 360px 360px;
-    background:none;
-    left:33.35%;
-    top:15.8%;
-		top:10.8%;
-    box-shadow: 10px 10px 18px #7d808d;
-		left: 0;
-  	right: 0;
-  	margin: 0 auto;
-}
-#coverInner {
-    position:absolute;
-    height:535px;
-    width: 319px;
-    border-radius: 15px 15px 360px 360px;
-    background:#000;
-    left:33.90%;
-    top:16.5%;
-		top:11.5%;
-	left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-#extraCalcShadow {
-    position:absolute;
-    height: 540px;
-    width: 300px;
-    border-radius:15px;
-    left:35%;
-    top:72%;
-		top:12%;
-    box-shadow: 10px 10px 18px #7d808d;
-	left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-#latch1 {
-    position:absolute;
-    height: 10px;
-    width:20px;
-    top:16.45%;
-		top:11.45%;
-    left:46.5%;
-    background: rgb(60, 114, 168);
-    border: 1px solid #000;
-}
-#latch2 {
-    position:absolute;
-    height: 10px;
-    width:20px;
-    top:16.45%;
-		top:11.45%;
-    left:53.2%; 
-    background: rgb(60, 114, 168);
-    border: 1px solid #000;
-}
+
 #calcName h1{
     position:absolute;
     color:rgba(255, 255, 255, 0.78);
@@ -1190,9 +1132,9 @@ body {
     font-family: 'Orbitron', sans-serif;
 }
 #calculator {
-    width: 540px;
+    width: 505px;
     background: #547C8F;
-    height:300px;
+    height:280px;
     position:absolute;
     top: 17%;
 		top: 12%;
@@ -1200,9 +1142,12 @@ body {
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.31);
     font-family: 'Orbitron', sans-serif;
-	left: 0;
-  right: 0;
-  margin: 0 auto;
+		box-shadow: 10px 10px 18px #7d808d;
+		left: 0;
+  	right: 0;
+		top:0;
+		bottom:0;
+  	margin: auto auto;
 }
 #mainBorder {
   width: 280px;
