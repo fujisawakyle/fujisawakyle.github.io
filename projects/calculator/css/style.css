@@ -357,6 +357,9 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+#calcButton.minusButton h1 {
+		left:41%;
+	}
 .plusButton {
     position: absolute;
     top: 65%;
@@ -366,6 +369,9 @@ h1{
     top:65.5%;
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
+}
+#calcButton.plusButton h1 {
+		left:41%;
 }
 .multiplyButton {
     position: absolute;
@@ -377,6 +383,10 @@ h1{
     left:52.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.multiplyButton h1 {
+		left:41%;
+		top:-1%;
+	}
 .moduloButton {
     position:absolute;
     top: 42%;
@@ -387,6 +397,9 @@ h1{
     left:10.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.moduloButton h3 {
+		top:-10%;
+	}	
 .divideButton {
     position: absolute;
     top: 42%;
@@ -397,6 +410,10 @@ h1{
     left:31.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.divideButton h1 {
+		left:41%; 
+		top:-13%;
+	}
 #calcButton.clearButton {
     position: absolute;
     top: 42%;
@@ -419,6 +436,10 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.sqrtButton h3 {
+		font-family: Courier; 
+		left:35%;
+	}
 .piButton {
     position: absolute;
     top:34.5%;
@@ -429,6 +450,12 @@ h1{
     left:10.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.piButton h3 {
+		font-family: Times; 
+		left:33%; 
+		font-size: 1.1em;
+		top:-66%;
+	}
 .leftParenthesisButton {
     position: absolute;
     top:34.5%;
@@ -439,6 +466,11 @@ h1{
     left:31.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.leftParenthesisButton h3{
+		font-size: 1.1em; 
+		left:40%; 
+		top:-63%;
+	}
 .rightParenthesisButton {
     position: absolute;
     top:34.5%;
@@ -449,6 +481,11 @@ h1{
     left:52.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.rightParenthesisButton h3 {
+		font-size: 1.1em; 
+		left:40%; 
+		top:-63%;
+	}
 .expButton {
     position: absolute;
     top: 27%;
@@ -459,6 +496,7 @@ h1{
     left:52.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	
 .logButton {
     position: absolute;
     top: 27%;
@@ -469,6 +507,11 @@ h1{
     left:31.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.logButton h3 {
+		font-size: 0.8em; 
+		left:24%; 
+		top:-55%;
+	}
 .lnButton {
     position: absolute;
     top: 27%;
@@ -479,6 +522,11 @@ h1{
     left:10.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+#calcButton.lnButton h3 {
+		font-size: 0.8em; 
+		top:-55%;
+		left:33%;
+	}
 .eButton {
     position: absolute;
     top: 27%;
@@ -489,6 +537,10 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.eButton h3 {
+		left:31%; 
+		top:-66%;
+	}
 .backButton {
     position: absolute;
     top: 88%;
@@ -919,6 +971,9 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.minusButton h1 {
+		left:42%;
+	}
 .plusButton {
     position: absolute;
     top: 65%;
@@ -929,6 +984,9 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+#calcButton.plusButton h1 {
+		left:41%;
+	}
 .multiplyButton {
     position: absolute;
     top: 42%;
@@ -939,6 +997,10 @@ h1{
     left:52.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.multiplyButton h1 {
+		left:41%;
+		top:-1%;
+	}
 .moduloButton {
     position:absolute;
     top: 42%;
@@ -949,6 +1011,9 @@ h1{
     left:10.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.moduloButton h3 {
+		top:-8%;
+	}	
 .divideButton {
     position: absolute;
     top: 42%;
@@ -959,6 +1024,10 @@ h1{
     left:31.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.divideButton h1 {
+		left:41%; 
+		top:-13%;
+	}
 #calcButton.clearButton {
     position: absolute;
     top: 42%;
@@ -981,6 +1050,10 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.sqrtButton h3 {
+		font-family: Courier; 
+		left:35%;
+	}
 .piButton {
     position: absolute;
     top:34.5%;
@@ -991,6 +1064,12 @@ h1{
     left:10.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.piButton h3 {
+		font-family: Times; 
+		left:33%; 
+		font-size: 1.1em;
+		top:-88%;
+	}
 .leftParenthesisButton {
     position: absolute;
     top:34.5%;
@@ -1001,6 +1080,11 @@ h1{
     left:31.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+#calcButton.leftParenthesisButton h3{
+		font-size: 1.1em; 
+		left:38%; 
+		top:-75%;
+	}
 .rightParenthesisButton {
     position: absolute;
     top:34.5%;
@@ -1011,6 +1095,11 @@ h1{
     left:52.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+#calcButton.rightParenthesisButton h3 {
+		font-size: 1.1em; 
+		left:38%; 
+		top:-75%;
+	}
 .expButton {
     position: absolute;
     top: 27%;
@@ -1031,6 +1120,11 @@ h1{
     left:31.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.logButton h3 {
+		font-size: 0.8em; 
+		left:22%; 
+		top:-65%;
+	}
 .lnButton {
     position: absolute;
     top: 27%;
@@ -1041,6 +1135,10 @@ h1{
     left:10.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.lnButton h3 {
+		font-size: 0.8em; 
+		top:-65%;
+	}
 .eButton {
     position: absolute;
     top: 27%;
@@ -1051,6 +1149,10 @@ h1{
     left:73.5%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.eButton h3 {
+		left:31%; 
+		top:-69%;
+	}
 .backButton {
     position: absolute;
     top: 88%;
@@ -1126,15 +1228,15 @@ body {
 #calcName h1{
     position:absolute;
     color:rgba(255, 255, 255, 0.78);
-    top:6.3%;
-    left:7%;
+    top:15.3%;
+    left:4%;
     font-size: 15px;
     font-family: 'Orbitron', sans-serif;
 }
 #calculator {
-    width: 505px;
+    width: 470px;
     background: #547C8F;
-    height:280px;
+    height:285px;
     position:absolute;
     top: 17%;
 		top: 12%;
@@ -1150,22 +1252,22 @@ body {
   	margin: auto auto;
 }
 #mainBorder {
-  width: 280px;
-  height:133px;
+  width: 240px;
+  height:148px;
   position:absolute;
-  top: 1%;
-  left:3.5%;
+  top: 3.5%;
+  left:2%;
   border: 1px solid rgba(0, 0, 0, 0.19);
   border-radius:10px;
   background-color:rgba(118, 151, 172, 0.82);
 }
 #screen {
-    width: 250px;
+    width: 220px;
     background: #C7D3C2;
     height: 50px;
     position:absolute;
-    top:14.5%;
-    left:8.5%;
+    top:32.5%;
+    left:4.25%;
     font-family: 'Orbitron', sans-serif;
     font-family: 'digital-7_monomono';
     font-size: 28px;
@@ -1176,31 +1278,31 @@ body {
     margin-top:2%;
 }
 #screenBorder {
-    width: 265px;
+    width: 228px;
     height: 60px;
     position: absolute;
-    top: 13.5%;
-    left: 6%;
+    top: 30.5%;
+    left: 3.25%;
     border: 1px solid rgba(0, 0, 0, 0.19);
     border-radius: 2px;
     background-color:rgba(255, 255, 255, 0.19);
 }
 #solarDesignBack {
     position:absolute;
-    top:14px;
-    left:27px;
+    top:20px;
+    left:23px;
     background: rgba(90, 78, 78, 0.91);
     height:30px;
-    width:250px;
+    width:213px;
     border-radius:1%;
     padding:0px 20px 0px 20px;
 }
 #solarDesignBackBorder {
     position:absolute;
-    top:10px;
-    left:20px;
+    top:16px;
+    left:17px;
     height:38px;
-    width:262px;
+    width:225px;
     border: 1px solid rgba(0, 0, 0, 0.19);
     background-color:rgba(255, 255, 255, 0.19);
 }
@@ -1208,10 +1310,10 @@ body {
     display:inline-block;
     list-style: none;
     height:30px;
-    width:60px;
+    width:50px;
     position: relative;
-    margin-top:5.5%;
-    left: -5.7%;
+    margin-top:4.75%;
+    left: -3.75%;
     margin-left:0.05px;
     margin-right:0.05px;
     background: rgba(71, 60, 66, 0.79);
@@ -1240,8 +1342,8 @@ h1{
 }
 #calcButton {
     display:inline-block;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: #000;
     color:#fff;
     border-radius: 12%;
@@ -1259,285 +1361,344 @@ h1{
 #calcButton h1{
     font-size: 20px;
     position:absolute;
-    top: -10%;
-    left: 35%;
+    top: -18%;
+    left: 31%;
     text-align: center;
 }
 .numButton1 {
   position: absolute;
-  top: 76.5%;
-  left: 10%;
+  top: 58.5%;
+  left: 55.5%;
 }
 #calcButton.numButton1:active {
-    top:77%;
-    left:10.5%;
+    top:59%;
+    left:56%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton2 {
     position: absolute;
-    top: 76.5%;
-    left: 31%;
+    top: 58.5%;
+    left: 66.5%;
 }
 #calcButton.numButton2:active {
-    top:77%;
-    left:31.5%;
+    top:59%;
+    left:67%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton3 {
   position: absolute;
-  top: 76.5%;
-  left: 52%;
+  top: 58.5%;
+  left: 77.5%;
 }
 #calcButton.numButton3:active {
-    top:77%;
-    left:52.5%;
+    top:59%;
+    left:78%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton4 {
   position: absolute;
-  top:65%;
-  left:10%;
+  top:40%;
+  left:55.5%;
 }
 #calcButton.numButton4:active {
-    top:65.5%;
-    left:10.5%;
+    top:40.5%;
+    left:56%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton5 {
   position: absolute;
-  top: 65%;
-  left: 31%;
+  top: 40%;
+  left: 66.5%;
 }
 #calcButton.numButton5:active {
-    top:65.5%;
-    left:31.5%;
+    top:40.5%;
+    left:67%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton6 {
     position: absolute;
-    top: 65%;
-    left: 52%;
+    top: 40%;
+    left: 77.5%;
 }
 #calcButton.numButton6:active {
-    top:65.5%;
-    left:52.5%;
+    top:40.5%;
+    left:78%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton7 {
     position: absolute;
-    top: 53.5%;
-    left:10%;
+    top: 21.5%;
+    left:55.5%;
 }
 #calcButton.numButton7:active {
-    top:54%;
-    left:10.5%;
+    top:22%;
+    left:56%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton8 {
     position: absolute;
-    top: 53.5%;
-    left: 31%;
+    top: 21.5%;
+    left: 66.5%;
 }
 #calcButton.numButton8:active {
-    top:54%;
-    left:31.5%;
+    top:22%;
+    left:67%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButton9 {
     position: absolute;
-    top: 53.5%;
-    left: 52%;
+    top: 21.5%;
+    left: 77.5%;
 }
 #calcButton.numButton9:active {
-    top:54%;
-    left:52.5%;
+    top:22%;
+    left:78%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .numButtonPoint {
     position: absolute;
-    top: 88%;
-    left: 31%;
+    top: 77.5%;
+    left: 66.5%;
 }
 #calcButton.numButtonPoint:active {
-    top:88.5%;
-    left:31.5%;
+    top:78%;
+    left:67%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 #calcButton.numButton0 {
     position: absolute;
-    top: 88%;
-    left: 10%;
+    top: 77.5%;
+    left: 55.5%;
 }
 #calcButton.numButton0:active {
-    top:88.5%;
-    left:10.5%;
+    top:78%;
+    left:56%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .minusButton {
     position: absolute;
-    top: 53.5%;
-    left: 73%;
+    top: 21.5%;
+    left: 88.5%;
 }
 #calcButton.minusButton:active {
-    top:54%;
-    left:73.5%;
+    top:22%;
+    left:89%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.minusButton h1 {
+		left:38%;
+	}
 .plusButton {
     position: absolute;
-    top: 65%;
-    left: 73%;
+    top: 40%;
+    left: 88.5%;
 }
 #calcButton.plusButton:active {
-    top:65.5%;
-    left:73.5%;
+    top:40.5%;
+    left:89%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+		#calcButton.plusButton h1 {
+		left:41%;
+	}
 .multiplyButton {
     position: absolute;
-    top: 42%;
-    left: 52%;
+    top: 3%;
+    left: 77.5%;
 }
 #calcButton.multiplyButton:active {
-    top:42.5%;
-    left:52.5%;
+    top: 3.5%;
+    left:78%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.multiplyButton h1 {
+		left:41%;
+		top:-10%;
+	}
 .moduloButton {
     position:absolute;
-    top: 42%;
-    left:10%;
+    top: 3%;
+    left:55.5%;
 }
 #calcButton.moduloButton:active {
-    top:42.5%;
-    left:10.5%;
+    top:3.5%;
+    left:56%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.moduloButton h3 {
+		top:-16%;
+		left:25%;
+	}	
 .divideButton {
     position: absolute;
-    top: 42%;
-    left: 31%;
+    top: 3%;
+    left: 66.5%;
 }
 #calcButton.divideButton:active {
-    top:42.5%;
-    left:31.5%;
+    top:3.5%;
+    left:67%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.divideButton h1 {
+		left:39%; 
+		top:-20%;
+	}
 #calcButton.clearButton {
     position: absolute;
-    top: 42%;
-    left: 73%;
+    top: 3%;
+    left: 88.5%;
     background:#FF3131;
     background: linear-gradient(to bottom, rgb(242, 155, 136) 0%,rgba(219, 39, 0, 0.89) 15%);
 }
 #calcButton.clearButton:active {
-    top:42.5%;
-    left:73.5%;
+    top:3.5%;
+    left:89%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 .sqrtButton {
     position: absolute;
-    top:34.5%;
-    left:73%;
+    top:77.5%;
+    left:39.25%;
 }
 #calcButton.sqrtButton:active {
-    top:35%;
-    left:73.5%;
+    top:78%;
+    left:39.75%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.sqrtButton h3 {
+		font-family: Courier; 
+		left:35%;
+		top:-20%
+	}
 .piButton {
     position: absolute;
-    top:34.5%;
-    left:10%;
+    top:77.5%;
+    left:5.25%;
 }
 #calcButton.piButton:active {
-    top:35%;
-    left:10.5%;
+    top:78%;
+    left:5.75%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.piButton h3 {
+		font-family: Times; 
+		left:28%; 
+		font-size: 1.6em;
+		top:-35%;
+	}
 .leftParenthesisButton {
     position: absolute;
-    top:34.5%;
-    left:31%;
+    top:77.5%;
+    left:16.75%;
 }
 #calcButton.leftParenthesisButton:active {
-    top:35%;
-    left:31.5%;
+    top:78%;
+    left:17.25%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.leftParenthesisButton h3{
+		font-size: 1.4em; 
+		left:38%; 
+		top:-20%;
+	}
 .rightParenthesisButton {
     position: absolute;
-    top:34.5%;
-    left:52%;
+    top:77.5%;
+    left:28.25%;
 }
 #calcButton.rightParenthesisButton:active {
-    top:35%;
-    left:52.5%;
+    top:78%;
+    left:28.75%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.rightParenthesisButton h3 {
+		font-size: 1.4em; 
+		left:38%; 
+		top:-20%;
+	}
 .expButton {
     position: absolute;
-    top: 27%;
-    left:52%;
+    top: 58.5%;
+    left:28.25%;
 }
 #calcButton.expButton:active {
-    top:27.5%;
-    left:52.5%;
+    top:59%;
+    left:28.75%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.expButton h3 {
+		top:-18%;
+		left: 28%;
+		font-size: 1.2em;
+	}
 .logButton {
     position: absolute;
-    top: 27%;
-    left: 31%;
+    top: 58.5%;
+    left: 16.75%;
 }
 #calcButton.logButton:active {
-    top:27.5%;
-    left:31.5%;
+    top:59%;
+    left:17.25%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.logButton h3 {
+		font-size: 1em; 
+		left:16%; 
+		top:-16%;
+	}
 .lnButton {
     position: absolute;
-    top: 27%;
-    left:10%;
+    top: 58.5%;
+    left:5.25%;
 }
 #calcButton.lnButton:active {
-    top:27.5%;
-    left:10.5%;
+    top:59%;
+    left:5.75%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.lnButton h3 {
+		font-size: 1em; 
+		top:-16%;
+		left:28%;
+	}
 .eButton {
     position: absolute;
-    top: 27%;
-    left:73%;
+    top: 58.5%;
+    left:39.25%;
 }
 #calcButton.eButton:active {
-    top:27.5%;
-    left:73.5%;
+    top:59%;
+    left:39.75%;
     box-shadow: 0px 0px 0px #4c5852;
 }
+	#calcButton.eButton h3 {
+		left:31%; 
+		top:-17%;
+		font-size: 1.2em;
+	}
 .backButton {
     position: absolute;
-    top: 88%;
-    left:52%;
+    top: 77.5%;
+    left:77.5%;
 }
 #calcButton.backButton:active {
-    top:88.5%;
-    left:52.5%;
+    top:78%;
+    left:78%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 #calcButton.equalButton{
     position:absolute;
-    top: 76.5%;
-    left: 73%;
-    height: 110px;
+    top: 58.5%;
+    left: 88.5%;
+    height: 100px;
 }
 #calcButton.equalButton:active {
-    top:77%;
-    left:73.5%;
+    top:59%;
+    left:89%;
     box-shadow: 0px 0px 0px #4c5852;
 }
 #calcButton.smallerButton{
-    height:28px;
+    
     background: linear-gradient(to bottom, rgb(149, 165, 219) 0%,rgba(54, 86, 173, 0.94) 15%);
     background: linear-gradient(to bottom, rgb(149, 165, 219) 0%,rgba(60, 114, 168, 0.94) 15%);
     
@@ -1547,7 +1708,7 @@ h1{
     text-align: center;
     padding: 3px;
     position: absolute;
-    top:-60%;
+    top:%;
     left:30%;
 }
 }
