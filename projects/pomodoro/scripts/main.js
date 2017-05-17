@@ -35,7 +35,7 @@ function timer(){
    else {
     $('#sessionTimer').html("Session Time:" + "<br>" + Math.floor(slider1Count/60) + ":" + "0" + slider1Count%60);
   }
-   if (slider1Count === 58) {
+   if (slider1Count === 0) {
 		 $("#sessionBell")[0].play();
      clearInterval(sessionTimer);
 		 
@@ -53,7 +53,7 @@ function timer(){
    else {
     $('#breakTimer').html("Break Time:" + "<br>" + Math.floor(slider2Count/60) + ":" + "0" + slider2Count%60);
   }
-   if (slider2Count === 58) {
+   if (slider2Count === 0) {
      clearInterval(sessionTimer2);
 		 $("#breakBell")[0].play();
    }
