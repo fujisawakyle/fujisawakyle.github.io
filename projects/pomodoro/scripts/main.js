@@ -14,8 +14,8 @@ $( "#slider1" ).slider({
 	$( "#slider1val" ).val( $( "#slider1" ).slider( "value" ) );
 	
 	
-	$("#sessionReset").hide();
-	
+	$("#sessionReset, #sessionTimer, #breakTimer").hide();
+
 	
 	$("#sessionStart").on("click", function () {
 		$("#sessionStart, #slider1, #slider2, #sessionTimer, #sessionReset, .sessionLabel, #slider1val, .breakLabel, #min2val").hide();
