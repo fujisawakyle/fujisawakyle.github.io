@@ -374,7 +374,6 @@ function checkWin() {
 	
 function playAI() {
 	count++;
-	alert(count);
 	random = generateRandom();
 	var aiMove = "#box" + random;
 	if (player == 0){
