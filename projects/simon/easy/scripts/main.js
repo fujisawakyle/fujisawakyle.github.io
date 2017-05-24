@@ -35,7 +35,7 @@ $(document).ready(function ( ) {
 		if (randomArray[playerCount] == playerArray[playerCount]) {
 			if (gameCount == playerCount){
 				$("#buttonDisabler").show();
-				if (gameCount == 5) {
+				if (gameCount == 4) {
 					$("#screen").html('<i class="fa fa-trophy" style="font-size:0.85em"</i>');
 					$("#winnerSound")[0].play();
 				}
