@@ -1,4 +1,10 @@
 $(document).ready(function(){
+	
+	var date = new Date();
+	var today  = date.getDay();
+	var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+	var daysUpdate = [];
+	
 	$("#sun, #moon, #cloud, #rain, #lightning, #daySky, #nightSky").hide();
   var tog = false;
   var data, lat, lon, city, region, time, temp, tempMin, tempMax, condition, description, wind, sunrise, sunset, icon, iconURL, temp1, temp2, temp3, temp4, temp5, temp6, bgURL, night = null, futureArray = [[],[],[],[],[],[]];
@@ -110,6 +116,7 @@ function showSnow() {
         // rain - day
 				showSun();
 				showRain();
+				weather = '<img style="100px src="graphics/rain.png">'
         break;  
       case '10n':
         // rain - night
@@ -141,16 +148,61 @@ function showSnow() {
         
       case '50d':
         showSun();
+				showCloud();
 				//mist - day
         break;
       case '50n':
         //mist - night
 				showMoon();
+				showCloud();
         break;  
     }
     return weather;
   }
-  
+
+	function switchIcon(val){
+		
+    var weather = "";
+    switch (val){
+      case '01d':
+				//clear sky - day
+        weather = '<img style="top:1.75px;left:-12px;" src="graphics/sun.png">'
+        break;
+      case '02d':
+        // few clouds - day
+				weather = '<img style="top:6px;" src="graphics/cloud.png">'
+        break;
+      case '03d':
+        // scattered clouds - day
+				weather = '<img style="top:6px;" src="graphics/cloud.png">'
+        break;    
+      case '04d':
+        // broken clouds - day
+				weather = '<img style="top:6px;" src="graphics/cloud.png">'
+        break;  
+      case '09d':
+        // shower rain - day
+				weather = '<img src="graphics/rain.png">'
+        break; 
+      case '10d':
+        // rain - day
+				weather = '<img src="graphics/rain.png">'
+        break;  
+      case '11d':
+        // thunderstorm - day
+				weather = '<img style="top:3px;" src="graphics/lightning.png">'
+        break;
+      case '13d':
+				// snow - day
+				weather = '<img style="top:3px;" src="graphics/snow">'
+        break;
+      case '50d':
+				//mist - day
+				weather = '<img style="top:6px;" src="graphics/cloud.png">'
+        break;
+    }
+    return weather;
+  }
   //converts unit
   function displayTemp(Ftemp, tog){
     if (tog) return Math.round((Ftemp - 32) * (5/9)) + "&#176;" + "C";//C 
@@ -163,7 +215,6 @@ function showSnow() {
   }
   //renders the unit change
   function renderDay (data, tog) {
-		
     temp = displayTemp(data.main.temp, tog);
     tempMin = displayTemp(data.main.temp_min, tog);
     tempMax = displayTemp(data.main.temp_max, tog);
@@ -173,7 +224,7 @@ function showSnow() {
     sunrise = data.sys.sunrise;
     sunset = data.sys.sunset;
     icon = data.weather[0].icon;
-		icon = "13n";
+		icon = "50d";
     bgURL = switchBG(icon);
    $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
     if (night == 1) {
@@ -181,37 +232,62 @@ function showSnow() {
 		}
   }
   
+	function generateDays(i) {
+		if(today == 6){
+			today = -1;
+		}
+		daysUpdate[i] = days[today + 1];
+		today++;
+	}
+	
 	function renderWeek (data, tog) {
+		//alert('renderWeek ' + tog);
+		
 		
 		for(i=0;i<6;i++){
+			
+			generateDays(i);
+			
 			futureArray[i][0] = data.list[i+1].temp.day;
 			futureArray[i][1] = data.list[i+1].weather[0].icon;
 		}
 		
-		futureArray[0][1]
+		icon1 = switchIcon(futureArray[0][1]);
 		temp1 = displayTemp(futureArray[0][0], tog);
 		$("#day1").html('<h1>' + temp1 + '</h1>');
+		$("#day1").prepend('<h2>' + daysUpdate[0] + '</h2>');
+		$("#day1").prepend(icon1);
 		
+		
+		icon2 = switchIcon(futureArray[1][1]);
 		temp2 = displayTemp(futureArray[1][0], tog);
 			$("#day2").html('<h1>' + temp2 + '</h1>');
+		$("#day2").prepend('<h2>' + daysUpdate[1] + '</h2>');
+		$("#day2").prepend(icon2);
+		
+		icon3 = switchIcon(futureArray[2][1]);
 		temp3 = displayTemp(futureArray[2][0], tog);
-		
 			$("#day3").html('<h1>' + temp3 + '</h1>');
+		$("#day3").prepend('<h2>' + daysUpdate[2] + '</h2>');
+		$("#day3").prepend(icon3);
+		
+		icon4 = switchIcon(futureArray[3][1]);
 		temp4 = displayTemp(futureArray[3][0], tog);
-		
 			$("#day4").html('<h1>' + temp4 + '</h1>');
-		temp5 = displayTemp(futureArray[4][0], tog);
-			
-			$("#day5").html('<h1>' + temp5 + '</h1>');
-		temp6 = displayTemp(futureArray[5][0], tog);
+		$("#day4").prepend('<h2>' + daysUpdate[3] + '</h2>');
+		$("#day4").prepend(icon4);
 		
+		icon5 = switchIcon(futureArray[4][1]);
+		temp5 = displayTemp(futureArray[4][0], tog);
+			$("#day5").html('<h1>' + temp5 + '</h1>');
+		$("#day5").prepend('<h2>' + daysUpdate[4] + '</h2>');
+		$("#day5").prepend(icon5);
+		
+		icon6 = switchIcon(futureArray[5][1]);
+		temp6 = displayTemp(futureArray[5][0], tog);
 			$("#day6").html('<h1>' + temp6 + '</h1>');
-		/*
-    
-    icon = data.weather[0].icon;
-		icon = "13n";
-    bgURL = switchBG(icon);
-   */
+		$("#day6").prepend('<h2>' + daysUpdate[5] + '</h2>');
+		$("#day6").prepend(icon6);
 		}
 	
   //fetches the location
@@ -256,7 +332,8 @@ function showSnow() {
     //if there's a click on toggle, switch cel and re-render;
      $("#toggle").on("click", function() {
     tog = !tog;
-    render(data, tog);
+			renderDay(apiData, tog);
+		
   });
     
   });

@@ -15,7 +15,7 @@ body{
 		background: white;
 }
 	#daySky {
-		height:318px;
+		height:325px;
 		width:100%;
 		background: linear-gradient( #0090fa 0%, rgb(0, 196, 255) 45%, rgba(27, 4, 48, 1) 100%);
 	}
@@ -91,7 +91,7 @@ body{
 }
 #ground {
 position:absolute;
-	height:200px;
+	height:230px;
 	top:323px;
 	width:100%;
 	background:#2dcb88;
@@ -153,90 +153,104 @@ position:absolute;
   position:absolute;
   font-size: 20px; 
 }
+	#weekDays h1{
+		color:black;
+		padding-right: 10px;
+		
+		text-align: right;
+		padding-top:3px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays h2 {
+		color:black;
+		padding-right: 10px;
+		text-align: left;
+		left:-60px;
+		font-size: 2.6em;
+		padding-top:2px;
+		padding-left: 10px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays img {
+		position:absolute;
+		z-index: 1;
+		height:50px;
+		width:50px;
+		top:0px;
+		left:-10px;
+	}
 	#first3 {
 		position:relative;
-		width:50%;
+		width:65%;
 		left:2.5%;
 	}
-	#first3 h1{
-		color:white;
-		padding-right: 10px;
-		text-align: right;
-	}
 	#day1 {
-		width:100px;
+		width:85px;
 		height:50px;
 		position:absolute;
 		left:0;
 		right:0;
 		margin: auto;
 		top:30px;
-		background:#000;
 	}
-	#day1 h1{
-		color:white;
+	#day1 h2 {
+		padding-left: 15px;	
 	}
 	#day2 {
-		width:100px;
+		width:85px;
 		height:50px;
 		position:absolute;
 		left:0;
 		right:0;
 		margin: auto;
 		top:90px;
-		background:#000;
 	}
 	#day3 {
-		width:100px;
+		width:85px;
 		height:50px;
 		position:absolute;
 		left:0;
 		right:0;
 		margin: auto;
-		background:#000;
 		top:150px
 	}
 		#last3 {
 		position:relative;
 		width:50%;
-			left:48.5%;
-	}	#last3 h1{
-		color:white;
-		padding-right: 10px;
-		text-align: right;
-	
+			left:54%;
+			
 	}
 	#day4 {
-		width:100px;
+		width:85px;
 		height:50px;
 		position:absolute;
 		left:0;
 		right:0;
 		margin: auto;
-		background:#000;
+		
 		top:30px;
 	}
-	
+	#day4 h2 {
+		padding-left: 6px;
+	}
 	#day5 {
-		width:100px;
+		width:85px;
 		height:50px;
 		position:absolute;
 		left:0;
 		right:0;
 		margin: auto;
-		background:#000;
+		background:none;
 		top:90px;
 	}
-	
 	#day6 {
-		width:100px;
+		width:85px;
 		height:50px;
 		position:absolute;
 		left:0;
 		right:0;
 		margin: auto;
-		background:#000;
+		
 		top:150px;
 	}
-	
 }
