@@ -14,9 +14,8 @@ $(document).ready(function(){
 	 $("#daySky").show();
 	 $("#sun").css({"width":"140px",
 		"position":"absolute",
-		"left":"36%",
+		"left":"26%",
 		"top":"25px"});
-	 $("#weatherBG h1").css({"top":"25px"})
  }
 function showMoon() {
 	night = 1;
@@ -24,35 +23,35 @@ function showMoon() {
 	$("#nightSky").show();
 	 $("#moon").css({"width":"100px",
 		"position":"absolute",
-		"left":"36%",
+		"left":"26%",
 		"top":"49px"})
  }
 function showCloud() {
 	 $("#cloud").show();
 	 $("#cloud").css({"width":"140px",
 		"position":"absolute",
-		"left":"40%",
+		"left":"30%",
 		"top":"60px"})
  }
 function showRain() {
 	$("#rain").show();
 	$("#rain").css({"width":"140px",
 		"position":"absolute",
-		"left":"40%",
+		"left":"30%",
 		"top":"61px"})
  }
 function showLightning() {
 	 $("#lightning").show();
 	 $("#lightning").css({"width":"140px",
 		"position":"absolute",
-		"left":"40%",
+		"left":"30%",
 		"top":"61px"})
  }
 function showSnow() {
 	 $("#snow").show();
 	 $("#snow").css({"width":"140px",
 		"position":"absolute",
-		"left":"40%",
+		"left":"30%",
 		"top":"61px"})
  }	
   //decides on background
@@ -166,7 +165,7 @@ function showSnow() {
     switch (val){
       case '01d':
 				//clear sky - day
-        weather = '<img style="top:1.75px;left:-12px;" src="graphics/sun.png">'
+        weather = '<img style="top:1.75px" id = "sunIcon" src="graphics/sun.png">'
         break;
       case '02d':
         // few clouds - day
@@ -224,7 +223,7 @@ function showSnow() {
     sunrise = data.sys.sunrise;
     sunset = data.sys.sunset;
     icon = data.weather[0].icon;
-		icon = "50d";
+		icon = "13d"
     bgURL = switchBG(icon);
    $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
     if (night == 1) {
@@ -239,7 +238,6 @@ function showSnow() {
 		daysUpdate[i] = days[today + 1];
 		today++;
 	}
-	
 	function renderWeek (data, tog) {
 		//alert('renderWeek ' + tog);
 		
@@ -289,7 +287,6 @@ function showSnow() {
 		$("#day6").prepend('<h2>' + daysUpdate[5] + '</h2>');
 		$("#day6").prepend(icon6);
 		}
-	
   //fetches the location
   var fetchLocation = "http://ip-api.com/json"; 
   $.getJSON(fetchLocation, function(data){
@@ -303,9 +300,9 @@ function showSnow() {
   $.getJSON(fetchTime, function(data){
     time = data.timestamp;
     if (sunrise < time && sunset > time) {
-      $("#sunOrMoon").html('Enjoy the sun while it\'s up!'); 
+      //$("#sunOrMoon").html('Enjoy the sun while it\'s up!'); 
     } else if (time > sunset) {
-      $("#sunOrMoon").html('What phase is the moon in?');     
+      //$("#sunOrMoon").html('What phase is the moon in?');     
     }
   });
     

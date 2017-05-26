@@ -1,19 +1,265 @@
-body{
-  background: #000; 
-	height:100vmax;
+html, body{
+  background: #000;
   font-family: 'Amatic SC', cursive;
-	bottom:0;
+	height:100%;
+	width:100%;
 }
 
-@media screen and (max-width: 450px) and (orientation: portrait) {
-
+#outsideContainer{
+		background:black;
+		position:relative;
+		width:100%;
+		height:100%;
+	}
 #container {
 	width:100%;
 	height:100%;
-	position:relative;
-	background: linear-gradient( #8F4C78 0%, rgba(27, 4, 48, 1) 45%, rgba(27, 4, 48, 1) 55%, rgba(27, 4, 48, 0) 56%, rgba(27, 4, 48, 0) 100%);
+	position:absolute;
 		background: white;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	margin: auto auto;
 }
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+	
+	#daySky {
+		height:49%;
+		width:100%;
+		background: linear-gradient( #0090fa 0%, rgb(0, 196, 255) 45%, rgba(27, 4, 48, 1) 100%);
+	}
+	#nightSky {
+		height:325px;
+		width:100%;
+		background: linear-gradient( #000000 0%, rgb(61, 0, 83) 45%, rgba(27, 4, 48, 1) 100%);
+	}
+	#sun {
+		width:140px;
+		position:absolute;
+		left:-36%;
+		top:25px;
+	}
+	#cloud {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:60px;
+	}
+	#moon {
+		position: absolute;
+		width:260px;
+		left:-40%;
+		top:45px;
+	}
+	#lightning {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+	#rain {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+	#snow {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+#mtn1 {
+	width:170px;
+	position:absolute;
+	left:-1%;
+	bottom:50%;
+}
+#mtn2 {
+	width:80px;
+	position:absolute;
+	left:46%;
+	bottom:50%;
+}
+.tree {
+	position:absolute;
+	top:39%;
+	width:55px;
+}
+#tree1 {
+	left:10%;	
+}
+#tree2 {
+	left:26%;	
+}
+#tree3 {
+	left:50%;	
+}
+#tree4 {
+	left:67%;
+}
+#ground {
+position:absolute;
+	height:51%;
+	top:49%;
+	width:100%;
+	background:#2dcb88;
+}
+#weatherBG {
+  width:100%;
+  margin:0 auto;
+  position:absolute;
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+	height:100%;
+}
+#weatherBG h1{
+  position:absolute;
+  text-align: center;
+  top: 7px;
+	left:0;
+	right:0;
+  margin: auto;
+  background-color: rgba(255,255,255,0.2);
+}
+#weatherBG h2{
+	position:absolute;
+  text-align: center;
+  top: 7px;
+	left:0;
+	right:0;
+  color:white;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+#weatherBG button {
+	position:absolute;
+	left:10%;;
+	top:180px;color: rgba(255,255,255,0.7);
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size:15px;
+ 	padding-left: 3px;
+	padding-right: 3px;
+  cursor:pointer;
+	
+}
+
+
+#todayTemp {
+  padding-left: 2%;
+	padding-right: 2%;
+  top:65px;
+  text-align:center;
+  
+  left:10%;
+  border: 2px hidden;
+  text-align: center;
+  color:black;
+  background-color: rgba(0, 0, 0, 0.07);
+  position:absolute;
+  font-size: 20px; 
+}
+	#weekDays {
+		position:relative;
+		width:100%;
+	}
+	#weekDays h1{
+		color:black;
+		padding-right: 10px;
+		text-align: right;
+		padding-top:3px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays h2 {
+		color:black;
+		padding-right: 10px;
+		text-align: left;
+		left:-60px;
+		font-size: 2.6em;
+		padding-top:2px;
+		padding-left: 10px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays img {
+		position:absolute;
+		z-index: 1;
+		height:50px;
+		width:50px;
+		top:0px;
+		left:-10px;
+	}
+	#day1 {
+		width:85px;
+		height:50px;
+		position:absolute;
+		left:20%;
+		right:0;
+	
+		top:30px;
+	}
+	#day1 h2 {
+		padding-left: 15px;	
+	}
+	#day2 {
+		width:85px;
+		height:50px;
+		position:absolute;
+		left:20%;
+		right:0;
+		
+		top:90px;
+	}
+	#day3 {
+		width:85px;
+		height:50px;
+		position:absolute;
+		left:20%;
+		right:0;
+		top:150px
+	}
+		
+	#day4 {
+		width:85px;
+		height:50px;
+		position:absolute;
+		left:60%;
+		right:0;
+		top:30px;
+	}
+	#day4 h2 {
+		padding-left: 6px;
+	}
+	#day5 {
+		width:85px;
+		height:50px;
+		position:absolute;
+		left:60%;
+		right:0;
+		background:none;
+		top:90px;
+	}
+	#day6 {
+		width:85px;
+		height:50px;
+		position:absolute;
+		left:60%;
+		right:0;
+		
+		top:150px;
+	}
+	
+}
+
+
+
+
+
+
+@media screen and (min-width: 451px) and (orientation: portrait) {
+
 	#daySky {
 		height:325px;
 		width:100%;
@@ -61,16 +307,16 @@ body{
 		top:61px;
 	}
 #mtn1 {
-	width:500px;
+	width:200px;
 	position:absolute;
 	left:-1%;
-	top:90px;
+	top:130px;
 }
 #mtn2 {
-	width:500px;
+	width:130px;
 	position:absolute;
 	left:56%;
-	top:220px;
+	top:210px;
 }
 .tree {
 	position:absolute;
@@ -124,7 +370,7 @@ position:absolute;
 }
 #weatherBG button {
 	position:absolute;
-	right:3%;;
+	right:9%;;
 	top:180px;color: rgba(255,255,255,0.7);
   background-color: rgba(0,0,0,0.2);
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -252,5 +498,490 @@ position:absolute;
 		margin: auto;
 		
 		top:150px;
+	}
+}
+
+
+
+
+
+@media screen and (max-width: 800px) and (orientation: landscape) {
+
+	#daySky {
+		height:325px;
+		width:100%;
+		background: linear-gradient( #0090fa 0%, rgb(0, 196, 255) 45%, rgba(27, 4, 48, 1) 100%);
+	}
+	#nightSky {
+		height:325px;
+		width:100%;
+		background: linear-gradient( #000000 0%, rgb(61, 0, 83) 45%, rgba(27, 4, 48, 1) 100%);
+	}
+	#sun {
+		width:140px;
+		position:absolute;
+		left:-36%;
+		top:25px;
+	}
+	#cloud {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:60px;
+	}
+	#moon {
+		position: absolute;
+		width:260px;
+		left:-40%;
+		top:45px;
+	}
+	#lightning {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+	#rain {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+	#snow {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+#mtn1 {
+	width:200px;
+	position:absolute;
+	left:-1%;
+	top:130px;
+}
+#mtn2 {
+	width:130px;
+	position:absolute;
+	left:56%;
+	top:210px;
+}
+.tree {
+	position:absolute;
+	top:250px;
+	width:55px;
+}
+#tree1 {
+	left:10%;	
+}
+#tree2 {
+	left:26%;	
+}
+#tree3 {
+	left:50%;	
+}
+#tree4 {
+	left:67%;
+}
+#ground {
+position:absolute;
+	height:230px;
+	top:323px;
+	width:100%;
+	background:#2dcb88;
+}
+#weatherBG {
+  width:100%;
+  margin:0 auto;
+  position:absolute;
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+}
+#weatherBG h1{
+  position:absolute;
+  text-align: center;
+  top: 7px;
+	left:0;
+	right:0;
+  margin: auto;
+  background-color: rgba(255,255,255,0.2);
+}
+#weatherBG h2{
+	position:absolute;
+  text-align: center;
+  top: 7px;
+	left:0;
+	right:0;
+  color:white;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+#weatherBG button {
+	position:absolute;
+	right:9%;;
+	top:180px;color: rgba(255,255,255,0.7);
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size:15px;
+ 	padding-left: 3px;
+	padding-right: 3px;
+  cursor:pointer;
+	
+}
+#weatherBG button:hover {
+  
+}
+
+
+#todayTemp {
+  padding-left: 2%;
+	padding-right: 2%;
+  top:65px;
+  text-align:center;
+  
+  right:1%;
+  border: 2px hidden;
+  text-align: center;
+  color:black;
+  background-color: rgba(0, 0, 0, 0.07);
+  position:absolute;
+  font-size: 20px; 
+}
+	#weekDays {
+		position:relative;
+		width:100%;
+	}
+	#weekDays h1{
+		color:black;
+		padding-right: 5px;
+		
+		text-align: right;
+		padding-top:3px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays h2 {
+		width:90px;
+		color:black;
+		padding-right: 10px;
+		text-align: center;
+		left:0px;
+		top: -30px;
+		font-size: 2.6em;
+		padding-top:2px;
+		padding-left: 10px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays img {
+		position:absolute;
+		z-index: 1;
+		height:50px;
+		width:50px;
+		top:0px;
+		left:-2px;
+	}
+	#first3 {
+		position:relative;
+		width:100%;
+		
+	}
+	#sunIcon {
+		left:30px;
+	}
+	#day1 {
+		width:90px;
+		height:50px;
+		position:absolute;
+		left:.5%;
+		
+		margin: auto;
+		top:70px;
+	}
+	#day1 h2 {
+		padding-left: 15px;	
+	}
+	#day2 {
+		width:90px;
+		height:50px;
+		position:absolute;
+		left:17%;
+		margin: auto;
+		top:70px;
+	}
+	#day3 {
+		width:90px;
+		height:50px;
+		position:absolute;
+		left:33.5%;
+		margin: auto;
+		top:70px;
+	}
+		
+	#day4 {
+		width:90px;
+		height:50px;
+		position:absolute;
+		left:50%;
+		margin: auto;
+		top:70px;
+	}
+	#day4 h2 {
+		padding-left: 6px;
+	}
+	#day5 {
+		width:90px;
+		height:50px;
+		position:absolute;
+		left:66.5%;
+		margin: auto;
+		background:none;
+		top:70px;
+	}
+	#day6 {
+		width:90px;
+		height:50px;
+		position:absolute;
+		left:83%;
+		margin: auto;
+		
+		top:70px;
+	}
+}
+
+
+
+@media screen and (min-width: 801px) and (orientation: landscape) {
+	
+	#daySky {
+		height:325px;
+		width:100%;
+		background: linear-gradient( #0090fa 0%, rgb(0, 196, 255) 45%, rgba(27, 4, 48, 1) 100%);
+	}
+	#nightSky {
+		height:325px;
+		width:100%;
+		background: linear-gradient( #000000 0%, rgb(61, 0, 83) 45%, rgba(27, 4, 48, 1) 100%);
+	}
+	#sun {
+		width:140px;
+		position:absolute;
+		left:-36%;
+		top:25px;
+	}
+	#cloud {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:60px;
+	}
+	#moon {
+		position: absolute;
+		width:260px;
+		left:-40%;
+		top:45px;
+	}
+	#lightning {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+	#rain {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+	#snow {
+		width:140px;
+		position: absolute;
+		left:-40%;
+		top:61px;
+	}
+#mtn1 {
+	width:200px;
+	position:absolute;
+	left:-1%;
+	top:130px;
+}
+#mtn2 {
+	width:130px;
+	position:absolute;
+	left:56%;
+	top:210px;
+}
+.tree {
+	position:absolute;
+	top:250px;
+	width:55px;
+}
+#tree1 {
+	left:10%;	
+}
+#tree2 {
+	left:26%;	
+}
+#tree3 {
+	left:50%;	
+}
+#tree4 {
+	left:67%;
+}
+#ground {
+position:absolute;
+	height:230px;
+	top:323px;
+	width:100%;
+	background:#2dcb88;
+}
+#weatherBG {
+  width:100%;
+  margin:0 auto;
+  position:absolute;
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+}
+#weatherBG h1{
+  position:absolute;
+  text-align: center;
+  top: 7px;
+	left:0;
+	right:0;
+  margin: auto;
+  background-color: rgba(255,255,255,0.2);
+}
+#weatherBG h2{
+	position:absolute;
+  text-align: center;
+  top: 7px;
+	left:0;
+	right:0;
+  color:white;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+#weatherBG button {
+	position:absolute;
+	right:9%;;
+	top:180px;color: rgba(255,255,255,0.7);
+  background-color: rgba(0,0,0,0.2);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size:15px;
+ 	padding-left: 3px;
+	padding-right: 3px;
+  cursor:pointer;
+	
+}
+#weatherBG button:hover {
+  
+}
+
+
+#todayTemp {
+  padding-left: 2%;
+	padding-right: 2%;
+  top:65px;
+  text-align:center;
+  
+  right:1%;
+  border: 2px hidden;
+  text-align: center;
+  color:black;
+  background-color: rgba(0, 0, 0, 0.07);
+  position:absolute;
+  font-size: 20px; 
+}
+	#weekDays {
+		position:relative;
+		width:100%;
+	}
+	#weekDays h1{
+		color:black;
+		padding-right: 25px;
+		
+		text-align: right;
+		padding-top:3px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays h2 {
+		width:125px;
+		color:black;
+		padding-right: 10px;
+		text-align: center;
+		left:0px;
+		top: -30px;
+		font-size: 2.6em;
+		padding-top:2px;
+		padding-left: 10px;
+  background-color: rgb(208, 193, 193);
+	}
+	#weekDays img {
+		position:absolute;
+		z-index: 1;
+		height:50px;
+		width:50px;
+		top:0px;
+		left:15px;
+	}
+	#first3 {
+		position:relative;
+		width:100%;
+		
+	}
+	#day1 {
+		width:125px;
+		height:50px;
+		position:absolute;
+		left:.5%;
+		
+		margin: auto;
+		top:70px;
+	}
+	#day1 h2 {
+		padding-left: 15px;	
+	}
+	#day2 {
+		width:125px;
+		height:50px;
+		position:absolute;
+		left:17%;
+		margin: auto;
+		top:70px;
+	}
+	#day3 {
+		width:125px;
+		height:50px;
+		position:absolute;
+		left:33.5%;
+		margin: auto;
+		top:70px;
+	}
+		
+	#day4 {
+		width:125px;
+		height:50px;
+		position:absolute;
+		left:50%;
+		margin: auto;
+		top:70px;
+	}
+	#day4 h2 {
+		padding-left: 6px;
+	}
+	#day5 {
+		width:125px;
+		height:50px;
+		position:absolute;
+		left:66.5%;
+		margin: auto;
+		background:none;
+		top:70px;
+	}
+	#day6 {
+		width:125px;
+		height:50px;
+		position:absolute;
+		left:83%;
+		margin: auto;
+		
+		top:70px;
 	}
 }
