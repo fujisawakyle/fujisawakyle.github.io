@@ -1,95 +1,71 @@
 $(document).ready(function ( ) {
-	
-	//tie
-	
-	
-var setBoard, winner, player = null, setBoard, random,
-			count;
-function xWins() {
-	$("#winPrompt").html('X wins!');
-	$("#winPrompt").css({"background":"rgba(84, 124, 143, 0.94)"});
-	$("#winPrompt").show();
-	$("#playPrompt").show();
-	$("#promptOuter").show();
-	count = 0;
-}
-function oWins() {
-	$("#winPrompt").html('O wins!');
-	$("#winPrompt").css({"background":"rgba(84, 124, 143, 0.94)"});
-	$("#winPrompt").show();
-	$("#playPrompt").show();
-	$("#promptOuter").show();
-	count = 0;
-}
-function tieGame() {
-	$("#winPrompt").html('Tie!');
-	$("#winPrompt").css({"background":"rgba(84, 124, 143, 0.94)"});
-	$("#winPrompt").show();
-	$("#playPrompt").show();
-	$("#promptOuter").show();
-}
-	function generateRandom(){
-		return Math.floor(Math.random() * 9 + 1);
-	}
 
-	//set up board
+//initial variables
+var setBoard, winner = null, player = null, setBoard, random, count, mode, round = 0;
+
+//set up board
 function startBoard(){ 
-	winner = 0;
+	winner = null;
 	count = 0;
 	setBoard = [
 		['', '', ''],
 		['', '', ''],
 		['', '', '']
 	]
+	//resets box visuals		
+	$("#mainBox .square").css({"background":"black"})
+	$("#box1").prop("disabled",false).html('').removeClass('disabled');
+	$("#box2").prop("disabled",false).html('').removeClass('disabled');
+	$("#box3").prop("disabled",false).html('').removeClass('disabled');
+	$("#box4").prop("disabled",false).html('').removeClass('disabled');
+	$("#box5").prop("disabled",false).html('').removeClass('disabled');
+	$("#box6").prop("disabled",false).html('').removeClass('disabled');
+	$("#box7").prop("disabled",false).html('').removeClass('disabled');
+	$("#box8").prop("disabled",false).html('').removeClass('disabled');
+	$("#box9").prop("disabled",false).html('').removeClass('disabled');
+	if (round == 0){
+		$("#box1").html('T');
+		$("#box2").html('I');
+		$("#box3").html('C');
+		$("#box4").html('T');
+		$("#box5").html('A');
+		$("#box6").html('C');
+		$("#box7").html('T');
+		$("#box8").html('O');
+		$("#box9").html('E');
+	}
+	round++;
+	
+	$("#diagonal1Win, #diagonal2Win, #column1Win, #column2Win, #column3Win, #row1Win, #row2Win, #row3Win, #winPrompt").hide();
+	$("#modePrompt, #prompt, #promptOuter").show();
 		
-			$("#box1").prop("disabled",false);
-			$("#box2").prop("disabled",false);
-			$("#box3").prop("disabled",false);
-			$("#box4").prop("disabled",false);
-			$("#box5").prop("disabled",false);
-			$("#box6").prop("disabled",false);
-			$("#box7").prop("disabled",false);
-			$("#box8").prop("disabled",false);
-			$("#box9").prop("disabled",false);
-			$("#box1").removeClass('disabled');
-			$("#box2").removeClass('disabled');
-			$("#box3").removeClass('disabled');
-			$("#box4").removeClass('disabled');
-			$("#box5").removeClass('disabled');
-			$("#box6").removeClass('disabled');
-			$("#box7").removeClass('disabled');
-			$("#box8").removeClass('disabled');
-			$("#box9").removeClass('disabled');
-		$("#box1").html('');
-		$("#box2").html('');
-		$("#box3").html('');
-		$("#box4").html('');
-		$("#box5").html('');
-		$("#box6").html('');
-		$("#box7").html('');
-		$("#box8").html('');
-		$("#box9").html('');
-		$("#diagonal1Win, #diagonal2Win, #column1Win, #column2Win, #column3Win, #row1Win, #row2Win, #row3Win, #winPrompt").hide();
-		$("#prompt, #promptOuter").show();
-		
+	//buttons that hide prompts and choose modes
 	$("#playButton").on("click", function () {
 		$("#playPrompt").hide();
 		startBoard();
 	});
-	
+	$("#beginner").on("click", function () {
+		$("#modePrompt").hide();
+		mode = 0;				
+	});
+	$("#hard").on("click", function () {
+		$("#modePrompt").hide();
+		mode = 1;				
+	});
 	$("#oButton").on("click", function () {
 		$("#prompt, #promptOuter").hide();
 		player = 0;
 	});
-	
 	$("#xButton").on("click", function () {
 		$("#prompt, #promptOuter").hide();
 		player = 1;
 	});
-	}
-	//set up buttons
+}	
+
+//set up buttons
 function updateBoard() {
-	//update the board
+	
+	//buttons are disabled upon click and correct player piece is displayed. the computer's move is chosen and displayed, move chosen depends on mode chosen.
 
 	//box 1
 	$("#box1").on("click", function () {
@@ -97,18 +73,24 @@ function updateBoard() {
 			 $("#box1").prop("disabled",true);
 			$("#box1").addClass('disabled');
 			if (player === 0) {
-				$("#box1").html('O');
+				$("#box1").css({"background":"black"});
+				$("#box1").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[0][0] = 'O';
 			}
 			else {
-				$("#box1").html('X');
+				$("#box1").css({"background":"black"});
+				$("#box1").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[0][0] = 'X';
 			}
 			count +=1;
 			checkWin();
 			if (count > 0){
-				
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}								
 	});
@@ -118,17 +100,24 @@ function updateBoard() {
 			$("#box2").prop("disabled",true);
 			$("#box2").addClass('disabled');
 			if (player === 0) {
-				$("#box2").html('O');
+				$("#box2").css({"background":"black"});
+				$("#box2").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[0][1] = 'O';
 			}
 			else {
-				$("#box2").html('X');
+				$("#box2").css({"background":"black"});
+				$("#box2").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[0][1] = 'X';
 			}			
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
@@ -138,17 +127,24 @@ function updateBoard() {
 			$("#box3").prop("disabled",true);
 			$("#box3").addClass('disabled');
 			if (player === 0) {
-				$("#box3").html('O');
+				$("#box3").css({"background":"black"});
+				$("#box3").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[0][2] = 'O';
 			}
 			else {
-				$("#box3").html('X');
+				$("#box3").css({"background":"black"});
+				$("#box3").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[0][2] = 'X';
 			}		
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 			
 		}			
@@ -159,17 +155,24 @@ function updateBoard() {
 			$("#box4").prop("disabled",true);
 			$("#box4").addClass('disabled');
 			if (player === 0) {
-				$("#box4").html('O');
+				$("#box4").css({"background":"black"});
+				$("#box4").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[1][0] = 'O';
 			}
 			else {
-				$("#box4").html('X');
+				$("#box4").css({"background":"black"});
+				$("#box4").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[1][0] = 'X';
 			}			
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
@@ -179,17 +182,24 @@ function updateBoard() {
 			$("#box5").prop("disabled",true);
 			$("#box5").addClass('disabled');
 			if (player === 0) {
-				$("#box5").html('O');
+				$("#box5").css({"background":"black"});
+				$("#box5").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[1][1] = 'O';
 			}
 			else {
-				$("#box5").html('X');
+				$("#box5").css({"background":"black"});
+				$("#box5").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[1][1] = 'X';
 			}			
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
@@ -199,17 +209,24 @@ function updateBoard() {
 			$("#box6").prop("disabled",true);
 			$("#box6").addClass('disabled');
 			if (player === 0) {
-				$("#box6").html('O');
+				$("#box6").css({"background":"black"});
+				$("#box6").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[1][2] = 'O';
 			}
 			else {
-				$("#box6").html('X');
+				$("#box6").css({"background":"black"});
+				$("#box6").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[1][2] = 'X';
 			}		
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
@@ -219,17 +236,24 @@ function updateBoard() {
 			$("#box7").prop("disabled",true);
 			$("#box7").addClass('disabled');
 			if (player === 0) {
-				$("#box7").html('O');
+				$("#box7").css({"background":"black"});
+				$("#box7").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[2][0] = 'O';
 			}
 			else {
-				$("#box7").html('X');
+				$("#box7").css({"background":"black"});
+				$("#box7").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[2][0] = 'X';
 			}				
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
@@ -239,17 +263,24 @@ function updateBoard() {
 			$("#box8").prop("disabled",true);
 			$("#box8").addClass('disabled');
 			if (player === 0) {
-				$("#box8").html('O');
+				$("#box8").css({"background":"black"});
+				$("#box8").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[2][1] = 'O';
 			}
 			else {
-				$("#box8").html('X');
+				$("#box8").css({"background":"black"});
+				$("#box8").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[2][1] = 'X';
 			}		
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
@@ -259,129 +290,289 @@ function updateBoard() {
 			$("#box9").prop("disabled",true);
 			$("#box9").addClass('disabled');
 			if (player === 0) {
-				$("#box9").html('O');
+				$("#box9").css({"background":"black"});
+				$("#box9").html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 				setBoard[2][2] = 'O';
 			}
 			else {
-				$("#box9").html('X');
+				$("#box9").css({"background":"black"});
+				$("#box9").html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 				setBoard[2][2] = 'X';
 			}				
 			count +=1;
 			checkWin();
 			if (count > 0){
-				playAI();
+				if (mode == 0){
+					playAIEasy();
+				}
+				else {
+					playAIHard();
+				}
 			}
 		}			
 	});
 }	
-	
+
+//checks rows for a win
 function rowCheck (i) {
+	//chooses color of winning strikethrough
+	if (winner == 0) {
+		$("#row1Win, #row2Win, #row3Win").css({"background":"red"});
+	} else {
+		$("#row1Win, #row2Win, #row3Win").css({"background":"yellow"});
+	}
+	//strikethrough for a row 1 win
 	if (i === 0) {
-				$("#row1Win").css({"position":"absolute","height":"260px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"-82px","left":"145px","transform": "rotate(90deg)","z-index": "1"});
-				$("#row1Win").show();
-			}
-			else if (i == 1) {
-				$("#row2Win").css({"position":"absolute","height":"260px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"19px","left":"145px","transform": "rotate(90deg)","z-index": "1"});
-				$("#row2Win").show();			 
-			}
-			else if (i == 2){
-				$("#row2Win").css({"position":"absolute","height":"260px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"121px","left":"145px","transform": "rotate(90deg)","z-index": "1"});
-				$("#row2Win").show();	
-				$("#row3Win").show();
-			}
-}	
-function colCheck (i) {
-	if (i === 0) {
-				$("#column1Win").css({"position":"absolute","height":"260px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"20px","left":"44px","z-index":"1"});
-				$("#column1Win").show();
-			}
-			else if (i == 1) {
-				$("#column2Win").css({"position":"absolute","height":"260px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"20px","left":"145px","z-index":"1"});
-				$("#column2Win").show();			 
-			}
-			else if (i == 2){
-				$("#column3Win").css({"position":"absolute","height":"260px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"20px","left":"246px","z-index":"1"});
-				$("#column3Win").show();
-			}
+		$("#row1Win").css({"position":"absolute","height":"260px","width":"10px","top":"-82px","left":"145px","transform": "rotate(90deg)","z-index": "1"});
+		$("#row1Win").show();
+	}
+	//strikethrough for a row 2 win
+	else if (i == 1) {
+		$("#row2Win").css({"position":"absolute","height":"260px","width":"10px","top":"30px","left":"145px","transform": "rotate(90deg)","z-index": "1"});
+		$("#row2Win").show();			 
+	}
+	//strikethrough for a row 3 win		
+	else if (i == 2){
+		$("#row2Win").css({"position":"absolute","height":"260px","width":"10px","top":"141px","left":"145px","transform": "rotate(90deg)","z-index": "1"});
+		$("#row3Win").show();
+	}
 }
+	
+//checks columns for a win	
+function columnCheck (i) {
+	//chooses color of winning strikethrough
+	if (winner == 0) {
+		$("#column1Win, #column2Win, #column3Win").css({"background":"red"});
+	} else {
+		$("#column1Win, #column2Win, #column3Win").css({"background":"yellow"});
+	}
+	//strikethrough for a row 1 win
+	if (i === 0) {
+		$("#column1Win").css({"position":"absolute","height":"258px","width":"10px","top":"30px","left":"34px","z-index":"1"});
+		$("#column1Win").show();
+	}
+	//strikethrough for a row 2 win		
+	else if (i == 1) {
+		$("#column2Win").css({"position":"absolute","height":"258px","width":"10px","top":"30px","left":"145px","z-index":"1"});
+		$("#column2Win").show();			 
+	}
+	//strikethrough for a row 3 win		
+	else if (i == 2){
+		$("#column3Win").css({"position":"absolute","height":"258px","width":"10px","top":"30px","left":"255px","z-index":"1"});
+		$("#column3Win").show();
+	}
+}
+	
+//checks diagonal1 for a win	
 function diagonal1Win () {
-	$("#diagonal1Win").css({"position":"absolute","height":"350px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"-25px","left":"145px","transform":"rotate(-45deg)","z-index":"1"});
+	//strikethrough for a diagonal 1 win	
+	$("#diagonal1Win").css({"position":"absolute","height":"345px","width":"10px","top":"-15px","left":"145px","transform":"rotate(-45deg)","z-index":"1"});
+	//chooses color of winning strikethrough
+	if (winner == 0) {
+		$("#diagonal1Win").css({"background":"red"});
+	} else {
+		$("#diagonal1Win").css({"background":"yellow"});
+	}
 	$("#diagonal1Win").show();
 }
+
+//checks diagonal2 for a win	
 function diagonal2Win () {
-	$("#diagonal2Win").css({"position":"absolute","height":"350px","width":"10px","background":"rgba(0, 0, 0, 0.71)","top":"-25px","left":"144px","transform":"rotate(45deg)","z-index":"1"});
+	//strikethrough for a diagonal 2 win
+	$("#diagonal2Win").css({"position":"absolute","height":"345px","width":"10px", "top":"-15px","left":"144px","transform":"rotate(45deg)","z-index":"1"});
+	//chooses color of winning strikethrough
+	if (winner == 0) {
+		$("#diagonal2Win").css({"background":"red"});
+	} else {
+		$("#diagonal2Win").css({"background":"yellow"});
+	}
 	$("#diagonal2Win").show();
 }
-	//check for a winner
+	
+//check for a winner
 function checkWin() {
+	
 	//straight wins
 	for (var i=0;i<3;i++){
 		// check rows
 		if (setBoard[i][0] == 'X' && setBoard[i][1] == 'X' && setBoard[i][2] == 'X'){
-			rowCheck(i);
-			
-					winner = 1;
-					xWins();
-					
+			winner = 1;	
+			rowCheck(i);		
+			xWins();	
 		} 
 		else if(setBoard[i][0] == 'O' && setBoard[i][1] == 'O' && setBoard[i][2] == 'O') {
+			winner = 0;
 			rowCheck(i);
-			
-					winner = 1;
-					oWins();
-				
+			oWins();
 		}
 		// check columns
 		else if (setBoard[0][i] == 'X' && setBoard[1][i] == 'X' && setBoard[2][i] == 'X'){
-			colCheck(i);
 			winner = 1;
+			columnCheck(i);
 			xWins();
 		} 
 		else if(setBoard[0][i] == 'O' && setBoard[1][i] == 'O' && setBoard[2][i] == 'O'){
-			colCheck(i);
-			winner = 1;
+			winner = 0;
+			columnCheck(i);
 			oWins();
 		}
 	}
+	
 	//diagonal wins
 	if (setBoard[0][0] == 'X' && setBoard[1][1] == 'X' && setBoard[2][2] == 'X'){
-			
-			diagonal1Win();
 			winner = 1;
+			diagonal1Win();
 			xWins();
 		} 
 		else if(setBoard[0][0] == 'O' && setBoard[1][1] == 'O' && setBoard[2][2] == 'O') {
+			winner = 0;
 			diagonal1Win();
-			winner = 1;
 			oWins();
 		}
 	else if (setBoard[2][0] == 'X' && setBoard[1][1] == 'X' && setBoard[0][2] == 'X'){
-			diagonal2Win();
 			winner = 1;
+			diagonal2Win();
 			xWins();
 		} 
 		else if(setBoard[2][0] == 'O' && setBoard[1][1] == 'O' && setBoard[0][2] == 'O') {
+			winner = 0;
 			diagonal2Win();
-			winner = 1;
 			oWins();
 		}
-	else if (winner == 0 && count == 10) {
+	
+	//checks for tie game
+	else if (winner == null && count == 10) {
 		tieGame();
+	}	
+}
+
+//the computer player looks for places to either win the game or block the player from winning	
+function checkWinningMove(piece)	{
+	// Horizontal
+ 	if (setBoard[0][1] == piece && setBoard[0][2] == setBoard[0][1] && setBoard[0][0] == '') return 1;
+	if (setBoard[0][0] == piece && setBoard[0][0] == setBoard[0][2] && setBoard[0][1] == '') return 2;
+	if (setBoard[0][0] == piece && setBoard[0][0] == setBoard[0][1] && setBoard[0][2] == '') return 3;
+
+	if (setBoard[1][1] == piece && setBoard[1][2] == setBoard[1][1] && setBoard[1][0] == '') return 4;
+  if (setBoard[1][0] == piece && setBoard[1][0] == setBoard[1][2] && setBoard[1][1] == '') return 5;
+	if (setBoard[1][0] == piece && setBoard[1][0] == setBoard[1][1] && setBoard[1][2] == '') return 6;
+  
+	if (setBoard[2][1] == piece && setBoard[2][2] == setBoard[2][1] && setBoard[2][0] == '') return 7;
+  if (setBoard[2][0] == piece && setBoard[2][0] == setBoard[2][2] && setBoard[2][1] == '') return 8;
+  if (setBoard[2][0] == piece && setBoard[2][0] == setBoard[2][1] && setBoard[2][2] == '') return 9;
+
+  // Vertical
+  if (setBoard[1][0] == piece && setBoard[1][0] == setBoard[2][0] && setBoard[0][0] == '') return 1;
+  if (setBoard[0][0] == piece && setBoard[0][0] == setBoard[2][0] && setBoard[1][0] == '') return 4;
+  if (setBoard[0][0] == piece && setBoard[0][0] == setBoard[1][0] && setBoard[2][0] == '') return 7;
+
+  if (setBoard[1][1] == piece && setBoard[1][1] == setBoard[2][1] && setBoard[0][1] == '') return 2;
+	if (setBoard[0][1] == piece && setBoard[0][1] == setBoard[2][1] && setBoard[1][1] == '') return 5;
+	if (setBoard[0][1] == piece && setBoard[0][1] == setBoard[1][1] && setBoard[2][1] == '') return 8;
+	
+  if (setBoard[1][2] == piece && setBoard[1][2] == setBoard[2][2] && setBoard[0][2] == '') return 3;
+	if (setBoard[0][2] == piece && setBoard[0][2] == setBoard[2][2] && setBoard[1][2] == '') return 6;
+	if (setBoard[0][2] == piece && setBoard[0][2] == setBoard[1][2] && setBoard[2][2] == '') return 9;
+	
+  // Diagonal
+  if (setBoard[1][1] == piece && setBoard[1][1] == setBoard[2][2] && setBoard[0][0] == '') return 1;
+	if (setBoard[0][0] == piece && setBoard[0][0] == setBoard[2][2] && setBoard[1][1] == '') return 5;
+	if (setBoard[0][0] == piece && setBoard[0][0] == setBoard[1][1] && setBoard[2][2] == '') return 9;
+
+  if (setBoard[1][1] == piece && setBoard[1][1] == setBoard[2][0] && setBoard[0][2] == '') return 3;
+	if (setBoard[0][2] == piece && setBoard[0][2] == setBoard[2][0] && setBoard[1][1] == '') return 5;
+	if (setBoard[0][2] == piece && setBoard[0][2] == setBoard[1][1] && setBoard[2][0] == '') return 7;
+	
+	return 0;
+}
+
+//outlines the best moves if the computer cannot win or block.	
+function bestMove(piece) {
+	var other;
+	if (piece == 'O'){
+		other = 'X';
 	}
-	//switch to other player
-	//end for game loop
+	else {
+		other = 'O'
 	}
 	
-function playAI() {
+	//chooses opening moves to set up for rest of the game.
+	if (setBoard[1][1] == piece) {
+		if (setBoard [0][0] == other && setBoard[2][2] == other && setBoard[1][2] == '') {
+			return 6;
+		}
+		if (setBoard [0][2] == other & setBoard[2][0] == other && setBoard[0][1] == '') {
+		return 4;
+		}
+		if (setBoard[0][0] == other && setBoard[2][1] == other && setBoard[2][0] == ''){
+			return 7;
+		}
+		if (setBoard[0][2] == other && setBoard[2][1] == other && setBoard[2][2] == ''){
+			return 9;
+		}
+		if (setBoard[0][0] == other && setBoard[1][2] == other && setBoard[0][2] == ''){
+			return 3;
+		}
+		if (setBoard[2][0] == other && setBoard[1][2] == other && setBoard[2][2] == ''){
+			return 9;
+		}
+		if (setBoard[0][2] == other && setBoard[1][0] == other && setBoard[0][0] == ''){
+			return 1;
+		}
+		if (setBoard[2][2] == other && setBoard[1][0] == other && setBoard[0][2] == ''){
+			return 7;
+		}
+		if (setBoard[0][2] == other && setBoard[0][1] == other && setBoard[0][0] == ''){
+			return 1;
+		}
+		if (setBoard[2][2] == other && setBoard[0][1] == other && setBoard[0][2] == ''){
+			return 3;
+		}
+	} 
+	
+	//best moves in order of importance
+	if(setBoard[1][1] == '') {
+		return 5;
+	}
+	else if (setBoard[0][0] == '') {
+		return 1;
+	} 
+	else if (setBoard[0][2] == '') {
+		return 3;
+	} 
+	else if (setBoard[2][0] == '') {
+		return 7;
+	}
+	else if (setBoard[2][2] == '') {
+		return 9;
+	} 
+	else if (setBoard[0][1] == '') {
+		return 2;
+	} 
+	else if (setBoard[1][0] == '') {
+		return 4;
+	} 
+	else if (setBoard[1][2] == '') {
+		return 6;
+	}
+	else if (setBoard[2][1] == '') {
+		return 8;
+	}
+}
+	
+//random playing AI when rookie mode is chosen.	
+function playAIEasy() {
 	count++;
 	random = generateRandom();
+	//chooses a random box to fil that hasn't been filled.
 	var aiMove = "#box" + random;
 	if (player == 0){
 		while ($(aiMove).hasClass('disabled')){
 			random = generateRandom();
 			aiMove = "#box" + random;
 		}
-		$(aiMove).html('X');
+		$(aiMove).css({"background":"black"});
+		$(aiMove).html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
 		$(aiMove).addClass('disabled');
 		switch (random) {
 			case 1:
@@ -418,7 +609,8 @@ function playAI() {
 			random = generateRandom();
 			aiMove = "#box" + random;
 		}
-		$(aiMove).html('O');
+		$(aiMove).css({"background":"black"});
+		$(aiMove).html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
 		$(aiMove).addClass('disabled');
 		switch (random) {
 			case 1:
@@ -452,11 +644,144 @@ function playAI() {
 	}
 	checkWin();
 }
+
+//computer checks for a winning move, then checks for blocking move, then implements 'best move' algorithm.
+function playAIHard() {
+	count++;
+	if (player == 0){
+		var victory = checkWinningMove('X');
+		if (victory > 0) {
+			aiMove = "#box" + victory;	
+		}
+		else {
+			var block = checkWinningMove('O');
+			if (block > 0) {
+				aiMove = "#box" + block;	
+			}
+			else {
+				var best = bestMove('X');
+				aiMove = "#box" + best;	
+			}
+		}
+		$(aiMove).css({"background":"black"});
+		$(aiMove).html("<i style= 'color:yellow; ;'class='fa fa-star-o'></i>");
+		$(aiMove).addClass('disabled');
+		var update = aiMove[aiMove.length -1];
+		switch (update) {
+			case '1':
+				setBoard[0][0] = 'X';
+				break;
+			case '2':
+				setBoard[0][1] = 'X';
+				break;
+			case '3':
+				setBoard[0][2] = 'X';
+				break;
+			case '4':
+				setBoard[1][0] = 'X';
+				break;
+			case '5':
+				setBoard[1][1] = 'X';
+				break;
+			case '6':
+				setBoard[1][2] = 'X';
+				break;
+			case '7':
+				setBoard[2][0] = 'X';
+				break;
+			case '8':
+				setBoard[2][1] = 'X';
+				break;
+			case '9':
+				setBoard[2][2] = 'X';
+				break;	
+		}
+	} else {
+		var victory = checkWinningMove('O');
+		if (victory > 0) {
+			aiMove = "#box" + victory;	
+		}
+		else {
+			var block = checkWinningMove('X');
+			if (block > 0) {
+				aiMove = "#box" + block;	
+			}
+			else {
+				var best = bestMove('O');
+				aiMove = "#box" + best;	
+			}
+		}
+		$(aiMove).css({"background":"black"});
+		$(aiMove).html("<i style= 'color:red; ;'class='fa fa-heart-o'></i>");
+		$(aiMove).addClass('disabled');
+		var update = aiMove[aiMove.length -1];
+		switch (update) {
+			case '1':
+				setBoard[0][0] = 'O';
+				break;
+			case '2':
+				setBoard[0][1] = 'O';
+				break;
+			case '3':
+				setBoard[0][2] = 'O';
+				break;
+			case '4':
+				setBoard[1][0] = 'O';
+				break;
+			case '5':
+				setBoard[1][1] = 'O';
+				break;
+			case '6':
+				setBoard[1][2] = 'O';
+				break;
+			case '7':
+				setBoard[2][0] = 'O';
+				break;
+			case '8':
+				setBoard[2][1] = 'O';
+				break;
+			case '9':
+				setBoard[2][2] = 'O';
+				break;	
+		}
+	}
+	checkWin();
+}		
+	
+//prompt for x winning	
+function xWins() {
+	$("#winPrompt").html('<i class = "fa fa-star-o"></i> wins!');
+	$("#winPrompt").show();
+	$("#playPrompt").show();
+	$("#promptOuter").show();
+	count = 0;
+}
+	
+//prompt for o winning	
+function oWins() {
+	$("#winPrompt").html('<i class = "fa fa-heart-o"></i> wins!');
+	$("#winPrompt").show();
+	$("#playPrompt").show();
+	$("#promptOuter").show();
+	count = 0;
+}
+	
+//prompt for tie game	
+function tieGame() {
+	$("#winPrompt").html('Tie!');
+	$("#winPrompt").show();
+	$("#playPrompt").show();
+	$("#promptOuter").show();
+}
+	
+//generates random number for rookie mode	
+function generateRandom(){
+	return Math.floor(Math.random() * 9 + 1);
+}
+
+//begin game
 	$("#playPrompt").show();
 	startBoard();	
 	updateBoard();
 
-	
-	
-	
 })
