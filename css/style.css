@@ -1,1056 +1,300 @@
-html,body{
-	height:100%;
-}
-
-@font-face {
-font-family: 'digital-7_monomono';
-    src: url('../fonts/digital-7_mono.woff2') format('woff2'),
-         url('../fonts/digital-7_mono.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-p {
-    line-height: 23px;
-}
 body {
-  background: #999;
+	background-color:white;
 }
-#container {
-  width: 100%;
-  background: #a27979;
-  background: #c1b078;
-  height: 800px;
+main {
+	font-family: 'Quicksand', sans-serif;
+}
+#homeSection {
+width:100%;
+}
+#homeSection h1 {
+	font-size:6em;
+	font-weight:bold;
+	color: #000;
+	width:60%;
+	margin: auto;
+}
+#homeSection h2 {
+	font-size:1.5em;
+	width:82%;
+	margin:auto;
+}
+.leftBar {
+	width:80px;
 	height:100%;
-  margin: 0 auto;
-  position:relative;
-}
-#cover {
-    position:absolute;
-    height:550px;
-    width: 330px;
-    border: 8px solid rgb(60, 114, 168);
-    border-radius: 15px 15px 360px 360px;
-    background:none;
-    left:33.35%;
-    top:15.8%;
-		top:10.8%;
-    box-shadow: 10px 10px 18px #7d808d;
-	top:-11px;
-	bottom:0;
-		left: 0;
-  	right: 0;
-  	margin: auto auto;
-}
-#coverInner {
-    position:absolute;
-    height:535px;
-    width: 319px;
-    border-radius: 15px 15px 360px 360px;
-    background:#000;
-    left:33.90%;
-    top:16.5%;
-		top:11.5%;
-	top:-16px;
-	bottom:0;
-	left: 0;
-  right: 0;
-  margin: auto auto;
-}
-#extraCalcShadow {
-    position:absolute;
-    height: 540px;
-    width: 300px;
-    border-radius:15px;
-    left:35%;
-    top:72%;
-		top:12%;
-    box-shadow: 10px 10px 18px #7d808d;
-	left: 0;
-  right: 0;
+	background:white;
+	position:fixed;
+	margin:0;
 	top:0;
-	bottom:0;
-  margin: auto auto;
-}
-#latch1 {
-    position:absolute;
-    height: 10px;
-    width:20px;
-    top:-540px;
-		left:0;
-		right:40px;
-		bottom:0;
-		margin: auto auto;
-    background: rgb(60, 114, 168);
-    border: 1px solid #000;
-}
-#latch2 {
-    position:absolute;
-    height: 10px;
-    width:20px;
-    top:-540px;
-	left:40px;
-	right:0;
-	bottom:0;
-	margin: auto auto;
-    background: rgb(60, 114, 168);
-    border: 1px solid #000;
-}
-#calcName h1{
-    position:absolute;
-    color:rgba(255, 255, 255, 0.78);
-    top:6.3%;
-    left:7%;
-    font-size: 15px;
-    font-family: 'Orbitron', sans-serif;
-}
-#calculator {
-    width: 300px;
-    background: #547C8F;
-    height:540px;
-    position:absolute;
-    top: 17%;
-		top: 12%;
-    left: 35%;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.31);
-    font-family: 'Orbitron', sans-serif;
-	left: 0;
-  right: 0;
-	top:0;
-	bottom:0;
-  margin: auto auto;
-}
-#mainBorder {
-  width: 280px;
-  height:133px;
-  position:absolute;
-  top: 1%;
-  left:3.5%;
-  border: 1px solid rgba(0, 0, 0, 0.19);
-  border-radius:10px;
-  background-color:rgba(118, 151, 172, 0.82);
-}
-#screen {
-    width: 250px;
-    background: #C7D3C2;
-    height: 50px;
-    position:absolute;
-    top:14.5%;
-    left:8.5%;
-    font-family: 'Orbitron', sans-serif;
-    font-family: 'digital-7_monomono';
-    font-size: 28px;
-    padding-right: 10px;
-    
-}
-#screen p {
-    margin-top:2%;
-}
-#screenBorder {
-    width: 265px;
-    height: 60px;
-    position: absolute;
-    top: 13.5%;
-    left: 6%;
-    border: 1px solid rgba(0, 0, 0, 0.19);
-    border-radius: 2px;
-    background-color:rgba(255, 255, 255, 0.19);
-}
-#solarDesignBack {
-    position:absolute;
-    top:14px;
-    left:27px;
-    background: rgba(90, 78, 78, 0.91);
-    height:30px;
-    width:250px;
-    border-radius:1%;
-    padding:0px 20px 0px 20px;
-}
-#solarDesignBackBorder {
-    position:absolute;
-    top:10px;
-    left:20px;
-    height:38px;
-    width:262px;
-    border: 1px solid rgba(0, 0, 0, 0.19);
-    background-color:rgba(255, 255, 255, 0.19);
-}
-#solarDesign li{
-    display:inline-block;
-    list-style: none;
-    height:30px;
-    width:60px;
-    position: relative;
-    margin-top:5.5%;
-    left: -5.7%;
-    margin-left:0.05px;
-    margin-right:0.05px;
-    background: rgba(71, 60, 66, 0.79);
-    border-radius:1px;
-}
-#solarDesign li #one {
-    position:absolute;
-    left:43%;
-}
-#solarDesign #11 {
-    position:absolute;
-    top: 14%;
-    left: 15%;
-}
-h1{
-  font-size: 20px;
-  position:absolute;
-  top: 30%;
-  left: 40%;
-}
-#symbolButtons h2{
-  font-size: 15px;
-  position:absolute;
-  top: -4%;
-  left: 35%;
-}
-#calcButton {
-    display:inline-block;
-    width: 50px;
-    height: 50px;
-    background: #000;
-    color:#fff;
-    border-radius: 12%;
-    position:absolute;
-    color: #FFFFFF;
-    border: .5px solid rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-    box-shadow: 2px 3px 0px #4c5852;
-    transition: all ease 0.3s;
-    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(13, 11, 11, 0.88) 15%);
-}
-#symbolButtons #calcButton {
-    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgb(87, 76, 76) 15%);
-}
-#calcButton h1{
-    font-size: 20px;
-    position:absolute;
-    top: -10%;
-    left: 35%;
-    text-align: center;
-}
-.numButton1 {
-  position: absolute;
-  top: 76.5%;
-  left: 10%;
-}
-#calcButton.numButton1:active {
-    top:77%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton2 {
-    position: absolute;
-    top: 76.5%;
-    left: 31%;
-}
-#calcButton.numButton2:active {
-    top:77%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton3 {
-  position: absolute;
-  top: 76.5%;
-  left: 52%;
-}
-#calcButton.numButton3:active {
-    top:77%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton4 {
-  position: absolute;
-  top:65%;
-  left:10%;
-}
-#calcButton.numButton4:active {
-    top:65.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton5 {
-  position: absolute;
-  top: 65%;
-  left: 31%;
-}
-#calcButton.numButton5:active {
-    top:65.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton6 {
-    position: absolute;
-    top: 65%;
-    left: 52%;
-}
-#calcButton.numButton6:active {
-    top:65.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton7 {
-    position: absolute;
-    top: 53.5%;
-    left:10%;
-}
-#calcButton.numButton7:active {
-    top:54%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton8 {
-    position: absolute;
-    top: 53.5%;
-    left: 31%;
-}
-#calcButton.numButton8:active {
-    top:54%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton9 {
-    position: absolute;
-    top: 53.5%;
-    left: 52%;
-}
-#calcButton.numButton9:active {
-    top:54%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButtonPoint {
-    position: absolute;
-    top: 88%;
-    left: 31%;
-}
-#calcButton.numButtonPoint:active {
-    top:88.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.numButton0 {
-    position: absolute;
-    top: 88%;
-    left: 10%;
-}
-#calcButton.numButton0:active {
-    top:88.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.minusButton {
-    position: absolute;
-    top: 53.5%;
-    left: 73%;
-}
-#calcButton.minusButton:active {
-    top:54%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.plusButton {
-    position: absolute;
-    top: 65%;
-    left: 73%;
-}
-#calcButton.plusButton:active {
-    top:65.5%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.multiplyButton {
-    position: absolute;
-    top: 42%;
-    left: 52%;
-}
-#calcButton.multiplyButton:active {
-    top:42.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.moduloButton {
-    position:absolute;
-    top: 42%;
-    left:10%;
-}
-#calcButton.moduloButton:active {
-    top:42.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.divideButton {
-    position: absolute;
-    top: 42%;
-    left: 31%;
-}
-#calcButton.divideButton:active {
-    top:42.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.clearButton {
-    position: absolute;
-    top: 42%;
-    left: 73%;
-    background:#FF3131;
-    background: linear-gradient(to bottom, rgb(242, 155, 136) 0%,rgba(219, 39, 0, 0.89) 15%);
-}
-#calcButton.clearButton:active {
-    top:42.5%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.sqrtButton {
-    position: absolute;
-    top:34.5%;
-    left:73%;
-}
-#calcButton.sqrtButton:active {
-    top:35%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.piButton {
-    position: absolute;
-    top:34.5%;
-    left:10%;
-}
-#calcButton.piButton:active {
-    top:35%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.leftParenthesisButton {
-    position: absolute;
-    top:34.5%;
-    left:31%;
-}
-#calcButton.leftParenthesisButton:active {
-    top:35%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.rightParenthesisButton {
-    position: absolute;
-    top:34.5%;
-    left:52%;
-}
-#calcButton.rightParenthesisButton:active {
-    top:35%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.expButton {
-    position: absolute;
-    top: 27%;
-    left:52%;
-}
-#calcButton.expButton:active {
-    top:27.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.logButton {
-    position: absolute;
-    top: 27%;
-    left: 31%;
-}
-#calcButton.logButton:active {
-    top:27.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.lnButton {
-    position: absolute;
-    top: 27%;
-    left:10%;
-}
-#calcButton.lnButton:active {
-    top:27.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.eButton {
-    position: absolute;
-    top: 27%;
-    left:73%;
-}
-#calcButton.eButton:active {
-    top:27.5%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.backButton {
-    position: absolute;
-    top: 88%;
-    left:52%;
-}
-#calcButton.backButton:active {
-    top:88.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.equalButton{
-    position:absolute;
-    top: 76.5%;
-    left: 73%;
-    height: 110px;
-}
-#calcButton.equalButton:active {
-    top:77%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.smallerButton{
-    height:28px;
-    background: linear-gradient(to bottom, rgb(149, 165, 219) 0%,rgba(54, 86, 173, 0.94) 15%);
-    background: linear-gradient(to bottom, rgb(149, 165, 219) 0%,rgba(60, 114, 168, 0.94) 15%);
-    
-}
-#calcButton h3 {
-    font-size: 15px;
-    text-align: center;
-    padding: 3px;
-    position: absolute;
-    top:-60%;
-    left:30%;
+	box-shadow: 1px 1px 5px #7d808d;
+	z-index: 2;
+	border-collapse:collapse;
+	display: table;
+}
+.leftBar .logo {
+	margin-top: 10%;
+	width:100%;
+	transition-property: padding;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+}
+.leftBar .logo:hover {
+	padding:6%;
+}
+.menuButton i:hover {
+	font-size:0.9em;
+	position:absolute;
+	left:24.75px;
+	top:101.5px;
+}
+main {
+	transform:translate(80px,0);
+}
+#contactTable {
+	display: table-row;
+	vertical-align : bottom;
+	height:0;
+	text-align: center;
+	margin-bottom:5px;
+}
+#contactTable a{
+	background:white;
+	font-size:3em;
+	float:;
+	margin-bottom:3em;
+	padding:10%;
+}
+#email {
+	padding:10%;
+}
+#contactTable img:hover{
+	width:45px;
+}
+#contactTable img {
+	width:50px;
+	transition-property: width;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+}
+.menuButton {
+	font-size:2.9em;
+	text-align: center;
+	margin:0;
+	display:inline-block;
+	margin-top:0;
+	color:#003db1;;
+	padding:0.2em;
+	width:100%;
+	transition-property: font-size;
+	transition-duration: .1s;
+	transition-timing-function: linear;
+}
+#drawer {
+	margin: 0;
+	position:fixed;
+	background-color: white;
+	transform:translateX(-48%);		
+	transition:transform 0.4s ease;
+	font-family: 'Glegoo', serif;
+	font-size: 20px;
+	color:black;
+	z-index: 1;
+	border-radius:5%;
+	border: 1px solid blue;
+	box-shadow: 1px 1px 5px #7d808d;
+}
+#drawer.open {
+	transform:translate(36%,0);
+
+	position:fixed;
+	background:white;
+}
+#drawer li{
+	list-style-type: none;
+	padding-right: .5em;
+	padding-top:.5em;
+	margin:2px;;
+	text-align:right;
+	display:block;
+	background:white;
+	color:yellow;
+	border-radius: 5%;
+	transition:transform 0.3s ease;
 }
 
 
-
-
-
-
-@media (min-width: 300px) and (orientation: landscape) {
-	html,body{
-	height:100%;
+@media screen and (max-width:550px) {
+	
+#homeSection img {
+	width:80%;
+	text-align: center;
 }
-
-@font-face {
-font-family: 'digital-7_monomono';
-    src: url('../fonts/digital-7_mono.woff2') format('woff2'),
-         url('../fonts/digital-7_mono.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+#homeSection h1 {
+	font-size:3em;
+	text-align: center;
+	display:inline-block;
+	line-height: 1.5em;
+	width:80%;
+	margin:0;
 }
-p {
-    line-height: 23px;
+#homeSection h2 {
+	font-size:0.9em;
+	text-align: center;
+	width:80%;
+	padding-left:10%;
+	padding-right:10%;
+	margin:0;
 }
-body {
-  background: #999;
+#projectsSection {
+	text-align: center;
+	width:80%;
+	margin:0;
 }
-#container {
-  width: 100%;
-  
-  background: #c1b078;
-	background: #a27979;
-  height: 800px;
-	height:100%;
-  margin: 0 auto;
+#projectsSection img{
+	width:90%;
+	margin:2%;
+	border-radius:2%
+}
+#aboutSection {
   position:relative;
-}/*
-#cover {
-    position:absolute;
-    height:300px;
-    width: 520px;
-    border: 8px solid rgb(60, 114, 168);
-    border-radius: 15px 15px 360px 360px;
-    background:none;
-    left:33.35%;
-    top:15.8%;
-		top:10.8%;
-    box-shadow: 10px 10px 18px #7d808d;
-		left: 0;
-  	right: 0;
-  	margin: 0 auto;
-}
-#coverInner {
-    position:absolute;
-    height:535px;
-    width: 319px;
-    border-radius: 15px 15px 360px 360px;
-    background:#000;
-    left:33.90%;
-    top:16.5%;
-		top:11.5%;
-	left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-#extraCalcShadow {
-    position:absolute;
-    height: 540px;
-    width: 300px;
-    border-radius:15px;
-    left:35%;
-    top:72%;
-		top:12%;
-    box-shadow: 10px 10px 18px #7d808d;
-	left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-#latch1 {
-    position:absolute;
-    height: 10px;
-    width:20px;
-    top:16.45%;
-		top:11.45%;
-    left:46.5%;
-    background: rgb(60, 114, 168);
-    border: 1px solid #000;
-}
-#latch2 {
-    position:absolute;
-    height: 10px;
-    width:20px;
-    top:16.45%;
-		top:11.45%;
-    left:53.2%; 
-    background: rgb(60, 114, 168);
-    border: 1px solid #000;
-}*/
-#calcName h1{
-    position:absolute;
-    color:rgba(255, 255, 255, 0.78);
-    top:6.3%;
-    left:7%;
-    font-size: 15px;
-    font-family: 'Orbitron', sans-serif;
-}
-#calculator {
-    width: 540px;
-    background: #547C8F;
-    height:300px;
-    position:absolute;
-    top: 17%;
-		top: 12%;
-    left: 35%;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.31);
-    font-family: 'Orbitron', sans-serif;
-	left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-#mainBorder {
-  width: 280px;
-  height:133px;
-  position:absolute;
-  top: 1%;
-  left:3.5%;
-  border: 1px solid rgba(0, 0, 0, 0.19);
-  border-radius:10px;
-  background-color:rgba(118, 151, 172, 0.82);
-}
-#screen {
-    width: 250px;
-    background: #C7D3C2;
-    height: 50px;
-    position:absolute;
-    top:14.5%;
-    left:8.5%;
-    font-family: 'Orbitron', sans-serif;
-    font-family: 'digital-7_monomono';
-    font-size: 28px;
-    padding-right: 10px;
-    
-}
-#screen p {
-    margin-top:2%;
-}
-#screenBorder {
-    width: 265px;
-    height: 60px;
-    position: absolute;
-    top: 13.5%;
-    left: 6%;
-    border: 1px solid rgba(0, 0, 0, 0.19);
-    border-radius: 2px;
-    background-color:rgba(255, 255, 255, 0.19);
-}
-#solarDesignBack {
-    position:absolute;
-    top:14px;
-    left:27px;
-    background: rgba(90, 78, 78, 0.91);
-    height:30px;
-    width:250px;
-    border-radius:1%;
-    padding:0px 20px 0px 20px;
-}
-#solarDesignBackBorder {
-    position:absolute;
-    top:10px;
-    left:20px;
-    height:38px;
-    width:262px;
-    border: 1px solid rgba(0, 0, 0, 0.19);
-    background-color:rgba(255, 255, 255, 0.19);
-}
-#solarDesign li{
-    display:inline-block;
-    list-style: none;
-    height:30px;
-    width:60px;
-    position: relative;
-    margin-top:5.5%;
-    left: -5.7%;
-    margin-left:0.05px;
-    margin-right:0.05px;
-    background: rgba(71, 60, 66, 0.79);
-    border-radius:1px;
-}
-#solarDesign li #one {
-    position:absolute;
-    left:43%;
-}
-#solarDesign #11 {
-    position:absolute;
-    top: 14%;
-    left: 15%;
-}
-h1{
-  font-size: 20px;
-  position:absolute;
-  top: 30%;
-  left: 40%;
-}
-#symbolButtons h2{
-  font-size: 15px;
-  position:absolute;
-  top: -4%;
-  left: 35%;
-}
-#calcButton {
-    display:inline-block;
-    width: 50px;
-    height: 50px;
-    background: #000;
-    color:#fff;
-    border-radius: 12%;
-    position:absolute;
-    color: #FFFFFF;
-    border: .5px solid rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-    box-shadow: 2px 3px 0px #4c5852;
-    transition: all ease 0.3s;
-    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(13, 11, 11, 0.88) 15%);
-}
-#symbolButtons #calcButton {
-    background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgb(87, 76, 76) 15%);
-}
-#calcButton h1{
-    font-size: 20px;
-    position:absolute;
-    top: -10%;
-    left: 35%;
-    text-align: center;
-}
-.numButton1 {
-  position: absolute;
-  top: 76.5%;
-  left: 10%;
-}
-#calcButton.numButton1:active {
-    top:77%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton2 {
-    position: absolute;
-    top: 76.5%;
-    left: 31%;
-}
-#calcButton.numButton2:active {
-    top:77%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton3 {
-  position: absolute;
-  top: 76.5%;
-  left: 52%;
-}
-#calcButton.numButton3:active {
-    top:77%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton4 {
-  position: absolute;
-  top:65%;
-  left:10%;
-}
-#calcButton.numButton4:active {
-    top:65.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton5 {
-  position: absolute;
-  top: 65%;
-  left: 31%;
-}
-#calcButton.numButton5:active {
-    top:65.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton6 {
-    position: absolute;
-    top: 65%;
-    left: 52%;
-}
-#calcButton.numButton6:active {
-    top:65.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton7 {
-    position: absolute;
-    top: 53.5%;
-    left:10%;
-}
-#calcButton.numButton7:active {
-    top:54%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton8 {
-    position: absolute;
-    top: 53.5%;
-    left: 31%;
-}
-#calcButton.numButton8:active {
-    top:54%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButton9 {
-    position: absolute;
-    top: 53.5%;
-    left: 52%;
-}
-#calcButton.numButton9:active {
-    top:54%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.numButtonPoint {
-    position: absolute;
-    top: 88%;
-    left: 31%;
-}
-#calcButton.numButtonPoint:active {
-    top:88.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.numButton0 {
-    position: absolute;
-    top: 88%;
-    left: 10%;
-}
-#calcButton.numButton0:active {
-    top:88.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.minusButton {
-    position: absolute;
-    top: 53.5%;
-    left: 73%;
-}
-#calcButton.minusButton:active {
-    top:54%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.plusButton {
-    position: absolute;
-    top: 65%;
-    left: 73%;
-}
-#calcButton.plusButton:active {
-    top:65.5%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.multiplyButton {
-    position: absolute;
-    top: 42%;
-    left: 52%;
-}
-#calcButton.multiplyButton:active {
-    top:42.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.moduloButton {
-    position:absolute;
-    top: 42%;
-    left:10%;
-}
-#calcButton.moduloButton:active {
-    top:42.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.divideButton {
-    position: absolute;
-    top: 42%;
-    left: 31%;
-}
-#calcButton.divideButton:active {
-    top:42.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.clearButton {
-    position: absolute;
-    top: 42%;
-    left: 73%;
-    background:#FF3131;
-    background: linear-gradient(to bottom, rgb(242, 155, 136) 0%,rgba(219, 39, 0, 0.89) 15%);
-}
-#calcButton.clearButton:active {
-    top:42.5%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.sqrtButton {
-    position: absolute;
-    top:34.5%;
-    left:73%;
-}
-#calcButton.sqrtButton:active {
-    top:35%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.piButton {
-    position: absolute;
-    top:34.5%;
-    left:10%;
-}
-#calcButton.piButton:active {
-    top:35%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.leftParenthesisButton {
-    position: absolute;
-    top:34.5%;
-    left:31%;
-}
-#calcButton.leftParenthesisButton:active {
-    top:35%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.rightParenthesisButton {
-    position: absolute;
-    top:34.5%;
-    left:52%;
-}
-#calcButton.rightParenthesisButton:active {
-    top:35%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.expButton {
-    position: absolute;
-    top: 27%;
-    left:52%;
-}
-#calcButton.expButton:active {
-    top:27.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.logButton {
-    position: absolute;
-    top: 27%;
-    left: 31%;
-}
-#calcButton.logButton:active {
-    top:27.5%;
-    left:31.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.lnButton {
-    position: absolute;
-    top: 27%;
-    left:10%;
-}
-#calcButton.lnButton:active {
-    top:27.5%;
-    left:10.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.eButton {
-    position: absolute;
-    top: 27%;
-    left:73%;
-}
-#calcButton.eButton:active {
-    top:27.5%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-.backButton {
-    position: absolute;
-    top: 88%;
-    left:52%;
-}
-#calcButton.backButton:active {
-    top:88.5%;
-    left:52.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.equalButton{
-    position:absolute;
-    top: 76.5%;
-    left: 73%;
-    height: 110px;
-}
-#calcButton.equalButton:active {
-    top:77%;
-    left:73.5%;
-    box-shadow: 0px 0px 0px #4c5852;
-}
-#calcButton.smallerButton{
-    height:28px;
-    background: linear-gradient(to bottom, rgb(149, 165, 219) 0%,rgba(54, 86, 173, 0.94) 15%);
-    background: linear-gradient(to bottom, rgb(149, 165, 219) 0%,rgba(60, 114, 168, 0.94) 15%);
-    
-}
-#calcButton h3 {
-    font-size: 15px;
-    text-align: center;
-    padding: 3px;
-    position: absolute;
-    top:-60%;
-    left:30%;
+	width:80%;
+	text-align: center;
+}
+#headshot {
+  width: 80%;
+	padding:0;
+	margin:0;
+	border-radius:50%;
+}
+#aboutSection p {
+	width:80%;
+	margin-top:0;
+	padding:5% 3% 5% 3%;
+	display: inline-block;
+	vertical-align: middle;
+}
+#footerSection{
+  width:80%;
+	text-align:center;
+
+}
+#footerSection p {
+	width:100%;
 }
 }
 
+@media screen and (min-width:551px) and (max-width:959px) {
+#homeSection{
+	width:calc(100% - 80px);
+	text-align: center;
+}
+#homeSection h1{
+	width:100%;
+	text-align: center;
+	font-size: 5em;
+}
+#projectsSection {
+	text-align: center;
+	width:calc(100% - 80px);
+	margin:0;
+}
+#projectsSection img{
+	width:200px;
+	height:289px;
+	display:inline-block;
+	flex-wrap:wrap;
+	margin:0.5%;
+	border-radius:2%
+}
+#aboutSection {
+	position:relative;
+	width:calc(100% - 80px);
+	text-align: center;
+}
+#headshot {
+  width: 50%;
+	padding:0;
+	margin:0;
+	border-radius:50%;
+	display: inline-block;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+#aboutSection p {
+	width:40%;
+	margin-top:0;
+	padding:5% 3% 5% 3%;
+	display: inline-block;
+	line-height: 1.5em;
+	vertical-align: middle;
+}
+#footerSection{
+	width:calc(100% - 80px);
+	text-align:center;
+	margin:3%;
+}
+#footerSection p {
+	width:100%;
+}	
+}
 
 
-
-
-
-
-
-
-
-
+@media screen and (min-width:960px) {
+main {
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+#homeSection{
+	width:calc(100% - 80px);
+	text-align: center;
+}
+#homeSection h1{
+	text-align: center;
+}
+#projectsSection {
+	text-align: center;
+	width:calc(100% - 80px);
+	margin:0;
+}
+#projectsSection img{
+	width:230px;
+	height:320px;
+	display:inline-block;
+	flex-wrap:wrap;
+	margin:0.5%;
+	border-radius:2%
+}
+#aboutSection {
+	position:relative;
+	width:calc(100% - 80px);
+}
+#headshot {
+  width: 50%;
+	padding:0;
+	margin:0;
+	border-radius:50%;
+	display: inline-block;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+#aboutSection p {
+	width:35%;
+	margin-top:0;
+	padding:5% 3% 5% 3%;
+	display: inline-block;
+	line-height: 1.5em;
+	vertical-align: middle;
+	text-align: left;
+}
+#footerSection{
+	width:calc(100% - 80px);
+	text-align:center;
+	margin:3%;
+}
+#footerSection p {
+	width:100%;
+}	
+}
