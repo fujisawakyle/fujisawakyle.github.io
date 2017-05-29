@@ -1,5 +1,5 @@
-$(document).ready(function(){
-	
+$(document).ready(function ( ) {
+    
 //date variables
 var date = new Date(),
 today  = date.getDay(),
@@ -154,7 +154,7 @@ function switchBG(val){
 			break;  
 	}
 }
-
+	
 //selects correct weather icon
 function switchIcon(val){
 	var weather = "";
@@ -211,24 +211,38 @@ function displaySpeed(mph, tog){
     return Math.round(mph) + " mph";
   }
 
+//creates on array of the next 6 days  
+function generateDays(i) {
+	if(today == 6){
+		today = -1;
+	}
+	daysUpdate[i] = days[today + 1];
+	today++;
+}	
+	
 //render day the unit changes from API and displays in DOM
 function renderDay (data, tog) {
-	temp = displayTemp(data.main.temp, tog);
-	tempMin = displayTemp(data.main.temp_min, tog);
-	tempMax = displayTemp(data.main.temp_max, tog);
-	description = data.weather[0].description;
+	temp = displayTemp(data.list[0].temp.day, tog);
+	tempMin = displayTemp(data.list[0].temp.min, tog);
+	tempMax = displayTemp(data.list[0].temp.max, tog);
+	description = data.list[0].weather[0].description;
 	description = description[0].toUpperCase() + description.substring(1);
-	wind = displaySpeed(data.wind.speed, tog);
-	sunrise = data.sys.sunrise;
-	sunset = data.sys.sunset;
-	icon = data.weather[0].icon;
+	wind = displaySpeed(data.list[0].speed, tog);
+	icon = data.list[0].weather[0].icon;
 	bgURL = switchBG(icon);
+	city = data.city.name;
  $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
 	if (night == 1) {
 		$("#todayTemp").css({"color":"white", "background":"rgba(255, 255, 255, 0.07)"})
 	}
-}
-	
+	if (night == 0){
+    	$("#weatherBG").prepend('<h1> Today in ' + city + '</h1>');
+		}
+		else {
+			$("#weatherBG").prepend('<h2> Tonight in ' + city + '</h2>');	
+		}
+}	
+
 //render day the unit changes from API and displays in DOM
 function renderWeek (data, tog) {
 	for(i=0;i<6;i++){
@@ -273,65 +287,16 @@ function renderWeek (data, tog) {
 	$("#day6").prepend('<h2>' + daysUpdate[5] + '</h2>');
 	$("#day6").prepend(icon6);
 }
-	
-//creates on array of the next 6 days  
-function generateDays(i) {
-	if(today == 6){
-		today = -1;
-	}
-	daysUpdate[i] = days[today + 1];
-	today++;
-}
+var url = 'http://api.openweathermap.org/data/2.5/forecast/daily?zip=95065,us&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
 
-//fetches the user's location
-var fetchLocation = "http://ip-api.com/json"; 
-$.getJSON(fetchLocation, function(data){
-  lat = data.lat;
-  lon = data.lon;
-  city = data.city;
-  region = data.region;
-  
-  //fetches API weather data for day  
-  var url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat +'&lon=' + lon + '&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
-  $.getJSON(url, function(apiData){
+$.getJSON(url, function(apiData){
     data = apiData;
     renderDay(apiData, tog);
-		if (night == 0){
-    	$("#weatherBG").prepend('<h1> Today in ' + city + ", " + region + '</h1>');
-		}
-		else {
-			$("#weatherBG").prepend('<h2> Tonight in ' + city + ", " + region + '</h2>');	
-		}
-		
-		//fetches API weather data for week
-		var weekAPI = 'http://api.openweathermap.org/data/2.5/forecast/daily?&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6&lat=' + lat + '&lon=' + lon + '&cnt=7';
-		$.getJSON(weekAPI, function(weekData){
-			data = weekData;
-			renderWeek(weekData, tog);
-		});
-
-		//if there's a click on toggle, switch cel and re-render;
+		renderWeek(apiData, tog);
+	
 		$("#toggle").on("click", function() {
 			tog = !tog;
 			renderDay(apiData, tog);
 		});
-		/*//fetches the time (unused)
-		var fetchTime = "http://api.timezonedb.com/v2/get-time-zone?key=N6JVQ7FFA9S1&format=json&by=position&lat=" + lat + "&lng=" + lon;
-		$.getJSON(fetchTime, function(data){
-			time = data.timestamp;
-			if (sunrise < time && sunset > time) {
-				//$("#sunOrMoon").html('Enjoy the sun while it\'s up!'); 
-			} else if (time > sunset) {
-				//$("#sunOrMoon").html('What phase is the moon in?');     
-			}
-		});
-		*/
-		
-  });
-
 });
-  
-}); 
-
-
-  
+})
