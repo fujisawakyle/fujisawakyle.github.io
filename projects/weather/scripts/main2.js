@@ -287,7 +287,7 @@ function renderWeek (data, tog) {
 	$("#day6").prepend('<h2>' + daysUpdate[5] + '</h2>');
 	$("#day6").prepend(icon6);
 }
-var url = 'http://api.openweathermap.org/data/2.5/forecast/daily?zip=95065,us&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
+var url = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/forecast/daily?zip=95065,us&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
 
 $.getJSON(url, function(apiData){
     data = apiData;
