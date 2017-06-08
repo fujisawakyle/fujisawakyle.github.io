@@ -234,7 +234,6 @@ function renderDay (data, tog) {
 	wind = displaySpeed(data.list[0].speed, tog);
 	icon = data.list[0].weather[0].icon;
 	bgURL = switchBG(icon);
-	alert(bgURL);
 	city = data.city.name;
  $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
 	if (night == 1) {
