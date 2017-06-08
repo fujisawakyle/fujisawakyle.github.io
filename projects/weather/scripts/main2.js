@@ -1,9 +1,9 @@
 $(document).ready(function ( ) {
-	 if (navigator.geolocation) {
+if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(function(position) {
-  });
-}
-    
+		lat = position.coords.latitude;
+		lon = position.coords.longitude;
+  
 //date variables
 var date = new Date(),
 today  = date.getDay(),
@@ -234,6 +234,7 @@ function renderDay (data, tog) {
 	wind = displaySpeed(data.list[0].speed, tog);
 	icon = data.list[0].weather[0].icon;
 	bgURL = switchBG(icon);
+	alert(bgURL);
 	city = data.city.name;
  $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
 	if (night == 1) {
@@ -291,8 +292,11 @@ function renderWeek (data, tog) {
 	$("#day6").prepend('<h2>' + daysUpdate[5] + '</h2>');
 	$("#day6").prepend(icon6);
 }
+	
+	var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + lat + '&lon=' + lon + '&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
+	/*
 var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/daily?zip=95065,us&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
-
+	*/
 $.getJSON(url, function(apiData){
     data = apiData;
     renderDay(apiData, tog);
@@ -303,4 +307,7 @@ $.getJSON(url, function(apiData){
 			renderDay(apiData, tog);
 		});
 });
+		
+});
+}		
 })
