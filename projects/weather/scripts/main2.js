@@ -12,7 +12,7 @@ daysUpdate = [];
 	
 //json variables
 var tog = false,
-data, lat, lon, city, region, time, temp, tempMin, tempMax, condition, description, wind, icon, temp1, temp2, temp3, temp4, temp5, temp6, bgURL, night = null, futureArray = [[],[],[],[],[],[]];
+data, lat, lon, city, region, time, temp, tempMin, tempMax, condition, description, wind, icon, temp1, temp2, temp3, temp4, temp5, temp6, night = null, futureArray = [[],[],[],[],[],[]];
 	
 //start weather icons in hidden state
 $("#sun, #moon, #cloud, #rain, #lightning, #daySky, #nightSky").hide();
@@ -233,7 +233,7 @@ function renderDay (data, tog) {
 	description = description[0].toUpperCase() + description.substring(1);
 	wind = displaySpeed(data.list[0].speed, tog);
 	icon = data.list[0].weather[0].icon;
-	bgURL = switchBG(icon);
+	switchBG(icon);
 	city = data.city.name;
  $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
 	if (night == 1) {
