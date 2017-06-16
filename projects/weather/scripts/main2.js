@@ -25,7 +25,7 @@ function showSun() {
 	$("#sun").css({"width":"140px",
 		"position":"absolute",
 		"left":"26%",
-		"top":"25px"});
+		"top":"36px"});
  }
 function showMoon() {
 	night = 1;
@@ -34,7 +34,7 @@ function showMoon() {
 	$("#moon").css({"width":"100px",
 		"position":"absolute",
 		"left":"26%",
-		"top":"49px"})
+		"top":"58px"})
  }
 function showCloud() {
 	$("#cloud").show();
@@ -65,6 +65,37 @@ function showSnow() {
 		"top":"61px"})
  }	
 
+//calculates the time
+function clock () {
+	url2='http://api.geonames.org/timezoneJSON?lat=' + lat + '&lng=' + lon + '&username=fujisawakyle'; 		
+	$.getJSON(url2, function(apiData2){
+		time = apiData2.time.substr(apiData2.time.length - 5);	
+		if (time[0] === '0') {
+			time = time.substr(time.length - 4) + 'AM';
+		}
+		else if(time[0] == '1' || time[0] == '2') {
+			var timeadjust = parseInt(time[0])*10 + parseInt(time[1]);
+			if (timeadjust >= 12) {
+				if (timeadjust > 12) {
+					timefinal = timeadjust - 12;
+					time = timefinal + time.substr(time.length - 3);
+
+				}
+				if (timeadjust == 24) {
+					time = time + 'AM';
+				}
+				else {
+					time = time + 'PM';
+				}
+			} 
+			else {
+				time = time.substr(time.length - 5) + 'AM';
+			}
+		}
+		$("#time").html(time).css({'position':'absolute', 'margin':'auto', 'left':'0', 'right':'0','font-size':'1.3em', 'top':'40px','color':'white'});
+	});	
+}	
+		
 //selects correct weather background
 function switchBG(val){
 	switch (val){
@@ -223,19 +254,12 @@ function generateDays(i) {
 	daysUpdate[i] = days[today + 1];
 	today++;
 }	
+
+//displays the correct location title, weekdays, and toggle button.		
+function showStatic (data) {
+	$("#weatherBG").prepend('<button class="btn" id = "toggle">Toggle Units</button>');
 	
-//render day the unit changes from API and displays in DOM
-function renderDay (data, tog) {
-	temp = displayTemp(data.list[0].temp.day, tog);
-	tempMin = displayTemp(data.list[0].temp.min, tog);
-	tempMax = displayTemp(data.list[0].temp.max, tog);
-	description = data.list[0].weather[0].description;
-	description = description[0].toUpperCase() + description.substring(1);
-	wind = displaySpeed(data.list[0].speed, tog);
-	icon = data.list[0].weather[0].icon;
-	switchBG(icon);
 	city = data.city.name;
- $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
 	if (night == 1) {
 		$("#todayTemp").css({"color":"white", "background":"rgba(255, 255, 255, 0.07)"})
 	}
@@ -245,15 +269,35 @@ function renderDay (data, tog) {
 		else {
 			$("#weatherBG").prepend('<h2> Tonight in ' + city + '</h2>');	
 		}
-}	
-
-//render day the unit changes from API and displays in DOM
-function renderWeek (data, tog) {
 	for(i=0;i<6;i++){
 		generateDays(i);
 		futureArray[i][0] = data.list[i+1].temp.day;
 		futureArray[i][1] = data.list[i+1].weather[0].icon;
 	}
+}			
+		
+//render day the unit changes from API and displays in DOM
+function renderDay (data, tog) {
+	temp = displayTemp(data.list[0].temp.day, tog);
+	tempMin = displayTemp(data.list[0].temp.min, tog);
+	tempMax = displayTemp(data.list[0].temp.max, tog);
+	description = data.list[0].weather[0].description;
+	description = description[0].toUpperCase() + description.substring(1);
+	wind = displaySpeed(data.list[0].speed, tog);
+	icon = data.list[0].weather[0].icon;
+	switchBG('02n');
+	city = data.city.name;
+ $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
+	
+	if (night == 1) {
+		$("#todayTemp").css({"background":"rgba(255, 255, 255, 0.07)"});
+		$("#weatherBG button").css({"background":"rgba(255, 255, 255, 0.07)"});
+	}
+}	
+
+//render day the unit changes from API and displays in DOM
+function renderWeek (data, tog) {
+	
 	//populates each of the days with day name, weather icon, and temperature
 	icon1 = switchIcon(futureArray[0][1]);
 	temp1 = displayTemp(futureArray[0][0], tog);
@@ -292,21 +336,21 @@ function renderWeek (data, tog) {
 	$("#day6").prepend(icon6);
 }
 	
-	var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + lat + '&lon=' + lon + '&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
-	/*
-var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/daily?zip=95065,us&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
-	*/
+var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + lat + '&lon=' + lon + '&cnt=7&units=imperial&APPID=bdab7e9459aff910128a08e2c5dd37e6';
+		
 $.getJSON(url, function(apiData){
     data = apiData;
+		showStatic(apiData);
     renderDay(apiData, tog);
 		renderWeek(apiData, tog);
-	
+		$("#loadSky, #loadMsg").hide();
 		$("#toggle").on("click", function() {
 			tog = !tog;
 			renderDay(apiData, tog);
+			renderWeek(apiData, tog);
 		});
+		var timer = setInterval (clock, 1000);
 });
-		
 });
 }		
 })
