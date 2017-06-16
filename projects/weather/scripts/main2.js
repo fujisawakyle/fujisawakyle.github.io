@@ -65,7 +65,7 @@ function showSnow() {
 		"top":"61px"})
  }	
 
-//calculates the time
+/*calculates the time
 function clock () {
 	url2='https://cors-anywhere.herokuapp.com/http://api.geonames.org/timezoneJSON?lat=' + lat + '&lng=' + lon + '&username=fujisawakyle'; 		
 	$.getJSON(url2, function(apiData2){
@@ -94,7 +94,7 @@ function clock () {
 		}
 		$("#time").html(time).css({'position':'absolute', 'margin':'auto', 'left':'0', 'right':'0','font-size':'1.3em', 'top':'40px','color':'white'});
 	});	
-}	
+}	*/
 		
 //selects correct weather background
 function switchBG(val){
@@ -349,7 +349,7 @@ $.getJSON(url, function(apiData){
 			renderDay(apiData, tog);
 			renderWeek(apiData, tog);
 		});
-		var timer = setInterval (clock, 1000);
+		//var timer = setInterval (clock, 1000);
 });
 });
 }		
