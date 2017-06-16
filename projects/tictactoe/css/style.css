@@ -60,11 +60,11 @@ html, body {
 	line-height: 50px;
 }
 #prompt {
-	height:80px;
+	height:110px;
 	width:300px;
 	position:absolute;
 	text-align: center;
-	background: none;
+	background: black;
 	left:0;
 	right:0;
 	bottom:0;
@@ -114,6 +114,21 @@ html, body {
 	font-size:1em;
 	border-radius:10px;
 	background:black;
+}
+#movePrompt {
+	position: absolute;
+	top:-60px;
+	left:0;
+	right:0;
+	margin:auto;
+	color:white;
+	height:40px;
+	width:290px;
+	z-index:2;
+	font-size:2em;
+	border-radius:10px;
+	background:black;
+	
 }
 #modePrompt button {
 	color: rgba(255, 255, 255, 0.94);

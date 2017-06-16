@@ -37,7 +37,7 @@ function startBoard(){
 	round++;
 	
 	$("#diagonal1Win, #diagonal2Win, #column1Win, #column2Win, #column3Win, #row1Win, #row2Win, #row3Win, #winPrompt").hide();
-	$("#modePrompt, #prompt, #promptOuter").show();
+	$("#movePrompt, #modePrompt, #prompt, #promptOuter").show();
 		
 	//buttons that hide prompts and choose modes
 	$("#playButton").on("click", function () {
@@ -66,7 +66,9 @@ function startBoard(){
 function updateBoard() {
 	
 	//buttons are disabled upon click and correct player piece is displayed. the computer's move is chosen and displayed, move chosen depends on mode chosen.
-
+	$(".square").on("click", function () {
+		$("#movePrompt").hide();
+	});
 	//box 1
 	$("#box1").on("click", function () {
 		if (!($("#box1").hasClass('disabled'))) {
