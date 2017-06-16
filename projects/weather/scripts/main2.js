@@ -67,7 +67,7 @@ function showSnow() {
 
 //calculates the time
 function clock () {
-	url2='http://api.geonames.org/timezoneJSON?lat=' + lat + '&lng=' + lon + '&username=fujisawakyle'; 		
+	url2='https://cors-anywhere.herokuapp.com/http://api.geonames.org/timezoneJSON?lat=' + lat + '&lng=' + lon + '&username=fujisawakyle'; 		
 	$.getJSON(url2, function(apiData2){
 		time = apiData2.time.substr(apiData2.time.length - 5);	
 		if (time[0] === '0') {
