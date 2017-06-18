@@ -255,6 +255,15 @@ function generateDays(i) {
 	today++;
 }	
 
+//creates array of days and weather icons
+function determineDay(data) {
+	for(i=0;i<6;i++){
+		generateDays(i);
+		futureArray[i][0] = data.list[i+1].temp.day;
+		futureArray[i][1] = data.list[i+1].weather[0].icon;
+	}
+}		
+		
 //displays the correct location title, weekdays, and toggle button.		
 function showStatic (data) {
 	$("#weatherBG").prepend('<button class="btn" id = "toggle">Toggle Units</button>');
@@ -295,12 +304,6 @@ function renderDay (data, tog) {
 function renderWeek (data, tog) {
 	
 	//populates each of the days with day name, weather icon, and temperature
-	for(i=0;i<6;i++){
-		generateDays(i);
-		futureArray[i][0] = data.list[i+1].temp.day;
-		futureArray[i][1] = data.list[i+1].weather[0].icon;
-	}
-	
 	icon1 = switchIcon(futureArray[0][1]);
 	temp1 = displayTemp(futureArray[0][0], tog);
 	$("#day1").html('<h1>' + temp1 + '</h1>');
@@ -342,7 +345,8 @@ var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/dat
 		
 $.getJSON(url, function(apiData){
     data = apiData;
-    renderDay(apiData, tog);
+  	determineDay(apiData);  
+		renderDay(apiData, tog);
 		renderWeek(apiData, tog);
 		showStatic(apiData);
 		console.log(night);
