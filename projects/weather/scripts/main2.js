@@ -285,7 +285,7 @@ function renderDay (data, tog) {
 	description = description[0].toUpperCase() + description.substring(1);
 	wind = displaySpeed(data.list[0].speed, tog);
 	icon = data.list[0].weather[0].icon;
-	switchBG('02n');
+	switchBG(icon);
 	city = data.city.name;
  $("#todayTemp").html(" " + description + "<br />" + 'Temp: ' + temp + "<br />" + 'High/Low: ' + tempMax + "/" + tempMin + "<br />" + 'Wind: ' + wind);
 	
