@@ -263,7 +263,7 @@ function showStatic (data) {
 	if (night == 1) {
 		$("#todayTemp").css({"color":"white", "background":"rgba(255, 255, 255, 0.07)"})
 	}
-	if (night == 0){
+	if (night === 0){
     	$("#weatherBG").prepend('<h1> Today in ' + city + '</h1>');
 		}
 		else {
@@ -340,9 +340,10 @@ var url = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/dat
 		
 $.getJSON(url, function(apiData){
     data = apiData;
-		showStatic(apiData);
     renderDay(apiData, tog);
 		renderWeek(apiData, tog);
+		showStatic(apiData);
+		console.log(night);
 		$("#loadSky, #loadMsg").hide();
 		$("#toggle").on("click", function() {
 			tog = !tog;
