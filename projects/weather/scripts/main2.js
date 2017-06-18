@@ -269,11 +269,7 @@ function showStatic (data) {
 		else {
 			$("#weatherBG").prepend('<h2> Tonight in ' + city + '</h2>');	
 		}
-	for(i=0;i<6;i++){
-		generateDays(i);
-		futureArray[i][0] = data.list[i+1].temp.day;
-		futureArray[i][1] = data.list[i+1].weather[0].icon;
-	}
+	
 }			
 		
 //render day the unit changes from API and displays in DOM
@@ -299,6 +295,12 @@ function renderDay (data, tog) {
 function renderWeek (data, tog) {
 	
 	//populates each of the days with day name, weather icon, and temperature
+	for(i=0;i<6;i++){
+		generateDays(i);
+		futureArray[i][0] = data.list[i+1].temp.day;
+		futureArray[i][1] = data.list[i+1].weather[0].icon;
+	}
+	
 	icon1 = switchIcon(futureArray[0][1]);
 	temp1 = displayTemp(futureArray[0][0], tog);
 	$("#day1").html('<h1>' + temp1 + '</h1>');
