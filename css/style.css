@@ -1,3 +1,72 @@
+.photo-grid {
+	margin: 1em auto;
+	max-width: 1106px;
+	text-align: center;
+}
+
+.photo-grid li {
+	border: 5px solid white;
+	display: inline-block;
+	margin: 1em;
+	padding: 0px;
+	
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.photo-grid img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	
+}
+
+.photo-grid figure {
+	
+	overflow: hidden;
+	position: relative;
+	
+}
+
+.photo-grid li:hover figcaption {
+	opacity: 1;
+}
+
+.photo-grid figcaption p {
+	display: table-cell;
+	font-size: 1.5em;
+	position: relative;
+	top: -40px;
+	-webkit-transition: all 300ms ease-out;
+	-moz-transition: all 300ms ease-out;
+	transition: all 300ms ease-out;
+	vertical-align: middle;
+}
+
+.photo-grid li:hover figcaption p {
+	-moz-transform: translateY(40px);
+	-webkit-transform: translateY(40px);
+	transform: translateY(40px);
+}
+
+.photo-grid figcaption {
+	background: rgba(0,0,0,0.8);
+	color: white;
+	display: table;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-transition: all 300ms;
+	-moz-transition: all 300ms;
+	transition: all 300ms;
+	-webkit-transition-delay: 100ms;
+	-moz-transition-delay: 100ms;
+	transition-delay: 100ms;
+	z-index: 100;
+}
 body {
 	background-color:white;
 }
@@ -121,7 +190,10 @@ main {
 	border-radius: 5%;
 	transition:transform 0.3s ease;
 }
-
+#sectionTitle {
+	text-align: center;
+	width:calc(100% - 80px);
+}
 
 @media screen and (max-width:550px) {
 	
@@ -147,14 +219,29 @@ main {
 }
 #projectsSection {
 	text-align: center;
-	width:80%;
+	width:110%;
 	margin:0;
+	position:relative;
+	left:-19%;
 }
+
 #projectsSection img{
-	width:90%;
-	margin:2%;
-	border-radius:2%
+	width:300px;
+	height:433.5px;
+	border-radius:2%;
 }
+.photo-grid figure {
+	width:300px;
+	height:433.5px;
+	
+	border-radius:2%;
+}
+.photo-grid li {
+	width:300px;
+}
+.photo-grid figcaption p {
+	width:300px;
+}	
 #aboutSection {
   position:relative;
 	width:80%;
@@ -203,8 +290,19 @@ main {
 	height:289px;
 	display:inline-block;
 	flex-wrap:wrap;
-	margin:0.5%;
 	border-radius:2%
+}
+.photo-grid figure {
+	width:200px;
+	height:289px;
+	
+	border-radius:2%;
+}
+.photo-grid li {
+	width:200px;
+}
+.photo-grid figcaption p {
+	width:200px;
 }
 #aboutSection {
 	position:relative;
@@ -263,8 +361,18 @@ main {
 	height:320px;
 	display:inline-block;
 	flex-wrap:wrap;
-	margin:0.5%;
 	border-radius:2%
+}
+.photo-grid figure {
+	width:230px;
+	height:320px;
+	border-radius:2%;
+}
+.photo-grid li {
+	width:230px;
+}
+.photo-grid figcaption p {
+	width:230px;
 }
 #aboutSection {
 	position:relative;
@@ -298,3 +406,5 @@ main {
 	width:100%;
 }	
 }
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
