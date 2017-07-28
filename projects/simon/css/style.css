@@ -14,6 +14,7 @@ font-family: 'digital-7_monomono';
 }
 body, html {
 	background:#c1b078;
+	background:#000;
 }
 #container {
 	width:100%;
@@ -23,9 +24,10 @@ body, html {
 }
 #deviceOuter {
 	position:absolute;
+	text-align: center;
 	height:300px;
 	width:300px;
-	background:white;
+	background:black;
 	border: none;
 	border-radius: 50%;
 	top:0;
@@ -50,7 +52,7 @@ body, html {
 #deviceInner1 {
 	height: 120px;
 	border: 2px solid black;
-	background:#ffffff;
+	background:rgb(255, 255, 255);
 	width:120px;
 	border-radius: 50%;
 	position: absolute;
@@ -59,7 +61,7 @@ body, html {
 	left:0;
 	right: 0;
 	margin:auto auto;
-	box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px black;
 	color:black;
 	text-align: center;
 	font-size: 2.5em;
@@ -89,7 +91,7 @@ body, html {
 	left:0;
 	right: 0;
 	margin:auto auto;
-	box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px black;
 }
 #screen {
 	height:28px;
@@ -108,36 +110,36 @@ body, html {
 #green {
 	background:green;
   border-top-left-radius: 100%;
-  border: 10px solid #333;
+  border: 10px solid black;
 	border-right-width: 5px;
 	border-bottom-width: 5px;
-	box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px black;
 }
 #red {
 	background:#b40101;
   border-top-right-radius: 100%;
-  border: 10px solid #333;
+  border: 10px solid black;
 	border-left-width: 5px;
 	border-bottom-width: 5px;
-	box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px black;
 	left:150px;
 }
 #blue {
 	background:#2650db;
   border-bottom-left-radius: 100%;
-  border: 10px solid #333;
+  border: 10px solid black;
 	border-top-width: 5px;
 	border-right-width: 5px;
-	box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px black;
 	top:150px;
 }
 #yellow {
 	background:#cbcb39;
   border-bottom-right-radius: 100%;
-  border: 10px solid #333;
+  border: 10px solid black;
 	border-left-width: 5px;
 	border-top-width: 5px;
-	box-shadow: 0 0 10px #333;
+	box-shadow: 0 0 10px black;
 	top:150px;
 	left:150px;
 }
