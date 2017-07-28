@@ -15,7 +15,14 @@ var gameCount = 0,
 function generateRandom() {
 	return Math.floor(Math.random() * 4 + 1);
 }
-
+//resets sound
+function stopSound() {
+	
+	
+	
+	
+}
+	
 //resets the button colors
 function clearButtons() {
 	$("#green").css({"background":"green"})
@@ -119,6 +126,7 @@ function computerPress() {
 //lights up button when player presses it
 function playerPress() {
 	colorPick = playerArray[playerCount];
+	stopSound();
 	pressButton(colorPick);
 }
 
@@ -126,24 +134,28 @@ function playerPress() {
 function pressButton() {
 	switch (colorPick) {
 		case 1:
+			$("#greenSound")[0].currentTime=0;
 			randomColor = 'green';
 			$("#" + randomColor).css({"background":"#29e354"});
 			 $("#greenSound")[0].play();
 			setTimeout(function(){$("#" + randomColor).css({"background":"green"});}, 200);
 			break;
 		case 2:
+			$("#redSound")[0].currentTime=0;
 			randomColor = 'red';
 			$("#" + randomColor).css({"background":"#ff0000"});
 			$("#redSound")[0].play();
 			setTimeout(function(){$("#" + randomColor).css({"background":"#b40101"});}, 200);
 			break;
 		case 3:
+			$("#blueSound")[0].currentTime=0;
 			randomColor = 'blue';
 			$("#" + randomColor).css({"background":"#00baff"});
 			$("#blueSound")[0].play();
 			setTimeout(function(){$("#" + randomColor).css({"background":"#2650db"});}, 200);
 			break;
 		case 4:
+			$("#yellowSound")[0].currentTime=0;
 			randomColor = 'yellow';
 			$("#" + randomColor).css({"background":"yellow"});
 			$("#yellowSound")[0].play();
