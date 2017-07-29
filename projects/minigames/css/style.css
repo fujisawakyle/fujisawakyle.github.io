@@ -1,0 +1,115 @@
+
+html, body {
+	height:100vh;
+}
+main {
+	background: black;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+	width: 100%;
+	height: 100vh;
+}
+#headerShift {
+	height: 70px;
+}
+
+#topBar {
+	width:100%;
+	height:70px;
+	background:white;
+	border-bottom: 5px solid blue; 
+	position:fixed;
+	display: inline-block;
+	margin:0;
+	top:0;
+	z-index: 4;
+}
+#topBar .logo {
+	position:relative;
+	width:70px;
+}
+#miniGamesText {
+	display:inline-block;
+}
+#allToggle {
+	display: inline-block;
+	margin-left: 5%;
+}
+#drawer {
+	margin-left: 0;
+	position:fixed;
+	background-color: white;	transform:translate(85%,-45%);		
+	transition:transform 0.1s ease;
+	font-family: 'Glegoo', serif;
+	font-size: 1em;
+	color:black;
+	z-index: 1;
+	border-radius:5%;
+	border: 5px solid blue;
+	box-shadow: 1px 1px 5px #7d808d;
+	z-index:4;
+}
+#drawer.open {
+	transform:translate(85%,75%);
+	position:fixed;
+	background:white;
+}
+#drawer li{
+	list-style-type: none;
+	padding: .5em;
+	margin:13px;
+	margin-left:0px;
+	text-align:left;
+	display:inline-block;
+	background:white;
+	color:black;
+	border-radius: 5%;
+	transition:transform 0.1s ease;
+}
+#mainSection {
+	position:relative;
+	width:100%;
+	height:100%;
+	display:inline-flex;
+}
+#allGames {
+	position:relative;
+	
+	margin: auto auto;
+	justify-content: center;
+}
+#allGames li {
+	border: 5px solid white;
+	display: inline-block;
+	margin-left: 1em;
+	margin-top: 1em;
+	margin-right: 1em;
+	text-align:center;
+	vertical-align: middle;
+}
+#allGames img {
+	height:400px;
+}
+
+#footerSection{
+  bottom: 0;
+	height: 100px;
+	left:0;
+	position:absolute;
+	width:100%;
+
+}
+
+@media screen and (max-width:550px) {
+
+	
+}
+
+@media screen and (min-width:551px) and (max-width:959px) {
+
+}
+
+@media screen and (min-width:960px) {
+
+
+}
