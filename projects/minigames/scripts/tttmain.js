@@ -23,7 +23,7 @@ function startBoard(){
 	$("#box7").prop("disabled",false).html('').removeClass('disabled');
 	$("#box8").prop("disabled",false).html('').removeClass('disabled');
 	$("#box9").prop("disabled",false).html('').removeClass('disabled');
-	if (round == 0){
+	if (round == 0 || restartTTT == 1){
 		$("#box1").html('T');
 		$("#box2").html('I');
 		$("#box3").html('C');

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link 
 		rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Glegoo|Julius Sans One|Bungee Outline|Barrio|Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Glegoo|Electrolize|Architects Daughter|Amatic SC|Julius+Sans+One|Bungee Outline|Barrio|Quicksand" rel="stylesheet">
     <audio id = "greenSound" src="simon/sounds/C.mp3"></audio>
 		<audio id = "redSound" src="simon/sounds/G.mp3"></audio>
 		<audio id = "blueSound" src="simon/sounds/A.mp3"></audio>
@@ -23,20 +23,17 @@
 
 <body>
 	<nav id="drawer" class="gameNav">
-			
-        <li>
-					<div id=simonToggle>Simon Game</div>
+				<li>
+					<div class="gameNav" id="tttToggle">Tic Tac Toe</div>
 				</li>
         <li>
-					<div id="tttToggle">Tic Tac Toe</div>
+					<div class="gameNav" id=simonToggle>SIMON</div>
 				</li>
-			
 	</nav>
 	<div id="topBar">
 		
+		<a href="http://fujisawakyle.com"><img class="logo" src="logo/transparentKF.png" alt="kyle fujisawa logo"></a>
 		
-		<img class="logo" src="logo/kyleLogo.svg" alt="kyle fujisawa logo">
-		<div id="miniGamesText">Mini Games</div>
 		<div id="allToggle">All Games</div>
 		
 	</div>
@@ -47,17 +44,32 @@
 	<div id="headerShift"></div>
   <div id ="mainSection">
 		<div id = "allGames">
+			<div id='allGamesTitle'>All Games</div>
 			<ul class="photo-grid">
 				<li id="tttGame">
+					<div class="relative">
 					<img 	 
 						 id="tictactoeGame"
 						 src="projectsImages/TTTSS.png" alt="Tic Tac Toe project screenshot">
+						<div class="absoluteText TTTText">
+							<h3>Tic Tac Toe</h3>
+							<h5>Match three in a row, column, or diagonal to win!</h5>
+						</div>
+					</div>
 				</li>
 				<li>
-					<img 
+					<div class="relative">
+						<img 
 							 id="simonGame"
-							 src="projectsImages/simonSS.png" alt="Simon project screenshot"> 
-					</li>
+							 src="projectsImages/simonSS.png" alt="Simon project screenshot">
+						<div class="absoluteText simonText">
+							<h3>Simon</h3>
+							<h5>Make it through 20 rounds to win!</h5>
+							<h6>Enable strict mode for an extra challenge!</h6>
+							
+						</div>
+					</div>	
+				</li>
 					
 			</ul>
 		</div>

@@ -31,38 +31,60 @@
 		$('#allGames,#tictactoeContainer').hide();
 		
 		$('#simonContainer').show()
+		startNew();
+		if (gameCount < 10){
+					$("#screen").html("0" + (gameCount + 1))	
+		} else {
+					$("#screen").html((gameCount + 1));
+		}
 	};
 
 	function playTTT () {
 		$('#allGames, #simonContainer').hide();
 		
 		$('#tictactoeContainer').show()
+		restartTTT = 1;
+		$("#playPrompt").show();
+		startBoard();	
+		updateBoard();
+		restartTTT = 0;
 	}
+
+	let restartTTT;
 	allToggle.addEventListener('click', function () {
-		
-		$("#greenSound")[0].currentTime=0;
-		$("#redSound")[0].currentTime=0;
-		$("#yellowSound")[0].currentTime=0;
-		$("#blueSound")[0].currentTime=0;
+		drawer.classList.toggle('open');
+		$('#allToggle').hide();
+		restartTTT = 1;
+		$("#greenSound")[0].pause();
+		$("#redSound")[0].pause();
+		$("#yellowSound")[0].pause();
+		$("#blueSound")[0].pause();
 		startNew();
 		$('#allGames').show();
 		$('#simonContainer, #tictactoeContainer').hide();
 		
 		if (gameCount < 10){
 					$("#screen").html("0" + (gameCount + 1))	
-				} else {
+		} else {
 					$("#screen").html((gameCount + 1));
-				}
-	
+		}
+		$("#playPrompt").show();
+		startBoard();	
+		updateBoard();
+		restartTTT = 0;
 	});
+	
 	simonGame.addEventListener('click', function () {
 		playSimon();
+		$('#allToggle').show();
 	});
+
 	simonToggle.addEventListener('click', function () {
 		playSimon();
 	});
 	
 	tttGame.addEventListener('click', function () {
+		$('#allToggle').show();
 		playTTT();
 	});
 
@@ -70,5 +92,5 @@
 		playTTT();
 	})
 	
-	$('#simonContainer, #tictactoeContainer').hide();
+	$('#simonContainer, #tictactoeContainer, #allToggle').hide();
 	
