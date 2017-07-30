@@ -785,4 +785,5 @@ function generateRandom(){
 	$("#playPrompt").show();
 	startBoard();	
 	updateBoard();
+	
 
