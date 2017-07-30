@@ -146,24 +146,24 @@ main {
 	border:4px solid white;
 }
 .simonText {
-	top:23%;
-	left: 59%;
+	top:20%;
+	left: 58%;
 	padding-left:26px;
 	padding-right:26px;
 	padding-top: -10px;
-	height:175px;
+	height:180px;
 	width:160px;
 }
 .absoluteText:hover {
 	border:4px solid #00f5ff;
 }
 .TTTText {
-	top:30%;
-	left: 55%;
+	top:25%;
+	left: 51%;
 	padding-left:35px;
 	padding-right:35px;
 	height:130px;
-	width:180px;
+	width:202px;
 }
 @media screen and (max-width:550px) {
 
