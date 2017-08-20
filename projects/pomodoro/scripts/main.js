@@ -20,6 +20,7 @@ $( "#slider1" ).slider({
 	$("#sessionStart").on("click", function () {
 		$("#sessionStart, #slider1, #slider2, #sessionTimer, #sessionReset, .sessionLabel, #slider1val, .breakLabel, #min2val").hide();
 		$("#sessionReset, #sessionTimer").show();
+		$("#sessionBell")[0].play();
 		
 		
 		
