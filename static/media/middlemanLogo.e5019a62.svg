@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="340px" viewBox="0 0 400 340" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" fill-rule="nonzero">
+            <g id="middlemanLogo">
+                <polygon id="Shape" fill-opacity="0.45" fill="#000000" points="0 40 200 0 200 30 0 60"></polygon>
+                <polygon id="Shape" fill="#FFFFFF" points="200 0 400 40 400 60 200 30"></polygon>
+                <polygon id="Shape" fill-opacity="0.45" fill="#000000" points="0 78 0 262 45 267 45 152 90 235 137 152 137 281 190 288 190 52 133 60 90 143 47 73"></polygon>
+                <polygon id="Shape" fill="#FFFFFF" points="400 78 400 262 355 267 355 152 310 235 263 152 263 281 210 288 210 52 267 60 310 143 353 73"></polygon>
+                <polygon id="Shape" fill-opacity="0.45" fill="#000000" points="0 300 200 340 200 310 0 280"></polygon>
+                <polygon id="Shape" fill="#FFFFFF" points="200 340 400 300 400 280 200 310"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
